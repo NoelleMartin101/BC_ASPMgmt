@@ -1,0 +1,67 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="CrossFit.master.cs" Inherits="CrossFit" %>
+
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>CrossFit Competition and Athlete Tracker</title>
+
+    <script src="https://kit.fontawesome.com/5bea803730.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="App_Themes/DefaultTheme/bootstrap.min.css"/>
+    <link rel="stylesheet" href="App_Themes/DefaultTheme/fontawesome.min.css" />
+    <link rel="stylesheet" href="App_Themes/DefaultTheme/ionicons.min.css" />
+    <link rel="stylesheet" href="App_Themes/DefaultTheme/jquery-ui.min.css" />
+    <link rel="stylesheet" href="App_Themes/DefaultTheme/Style.css"/>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="header" style="background-color: blue">
+            <table style="width: 100%; background-color: white;">
+                <tr>
+                    <td>
+                        <asp:HyperLink ID="link_Home2" runat="server" NavigateUrl="~/Admin_Users/Dashboard.aspx">
+                           <div class="header-link"><i class="fa fa-home"></i></div>
+                        </asp:HyperLink></td>
+                    <td style="width: 70%; font-size: 24pt; font-weight: bold; vertical-align: middle; color: black;">
+                        <div>&nbsp;&nbsp; CrossFit Competition & Athlete Tracker</div>
+                    </td>
+                    <td style="vertical-align: middle;" runat="server" visible="true" id="td_JournalEntries">
+                        <asp:HyperLink ID="HyperLink1" ToolTip="Admin / Settings" runat="server" NavigateUrl="~/DiaryEntries/ViewDiaryEntries.aspx">
+                            <div class="header-link" style="border-left: 1px solid #C4C4C4; border-right: none !important; font-size:16px; width:110px;">
+                                <i class="fa fa-file" style="color:black;"></i>&nbsp;&nbsp;Journal
+                            </div>
+                        </asp:HyperLink>
+                    </td>
+                    <td style="vertical-align: middle;" runat="server" visible="true" id="td_Admin">
+                        <asp:HyperLink ID="hLnk_Admin" ToolTip="Admin / Settings" runat="server" NavigateUrl="~/System_Management/Admin.aspx">
+                            <div class="header-link" style="border-left: 1px solid #C4C4C4; border-right: none !important; font-size:16px; width:110px;">
+                                <i class="fa fa-cog" style="color:black;"></i>&nbsp;&nbsp;Admin
+                            </div>
+                        </asp:HyperLink>
+                    </td>
+                    <td style="border-left: 1px solid #C4C4C4;">
+                        <div class="loginSection">
+                            <i style="font-size: 32px; color: #cecece;" class="ion-ios-contact-outline"></i>
+                            <asp:Label runat="server" ID="lbl_StaffNumber" Style="font-size: 10pt;" />
+                            <asp:LinkButton ID="link_Logout" runat="server" CausesValidation="false" OnClick="lnk_Logout_Click">
+                                <i class="fa fa-sign-out" style="font-size:32px; color:#000; float:right;"></i>
+                            </asp:LinkButton>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div style="position: relative; top: 66px; left: 60px; width: calc(100% - 125px); background-color: #ffffff">
+            <br />
+            <asp:ContentPlaceHolder ID="body" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+  
+</body>
+</html>
