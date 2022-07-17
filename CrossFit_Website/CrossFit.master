@@ -19,36 +19,29 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div id="header" style="background-color: blue">
+      
+        <div id="header" >
             <table style="width: 100%; background-color: white;">
                 <tr>
-                    <td>
-                        <asp:HyperLink ID="link_Home2" runat="server" NavigateUrl="~/Admin_Users/Dashboard.aspx">
-                           <div class="header-link"><i class="fa fa-home"></i></div>
-                        </asp:HyperLink></td>
-                    <td style="width: 70%; font-size: 24pt; font-weight: bold; vertical-align: middle; color: black;">
-                        <div>&nbsp;&nbsp; CrossFit Competition & Athlete Tracker</div>
-                    </td>
-                    <td style="vertical-align: middle;" runat="server" visible="true" id="td_JournalEntries">
-                        <asp:HyperLink ID="HyperLink1" ToolTip="Admin / Settings" runat="server" NavigateUrl="~/DiaryEntries/ViewDiaryEntries.aspx">
-                            <div class="header-link" style="border-left: 1px solid #C4C4C4; border-right: none !important; font-size:16px; width:110px;">
+                    <td style="width:95%">
+                        <asp:HyperLink ID="link_Home2" Width="80%" runat="server" NavigateUrl="~/Admin_Users/Dashboard.aspx">
+                           <div class="header-link"><i class="fa fa-home"></i>&nbsp;&nbsp;&nbsp; CrossFit Competition & Athlete Tracker</div>
+                        </asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink1" Width="150px" ToolTip="Journal Entries" runat="server" NavigateUrl="~/DiaryEntries/ViewDiaryEntries.aspx">
+                            <div class="header-link" style="font-size:16px;">
                                 <i class="fa fa-file" style="color:black;"></i>&nbsp;&nbsp;Journal
                             </div>
                         </asp:HyperLink>
-                    </td>
-                    <td style="vertical-align: middle;" runat="server" visible="true" id="td_Admin">
-                        <asp:HyperLink ID="hLnk_Admin" ToolTip="Admin / Settings" runat="server" NavigateUrl="~/System_Management/Admin.aspx">
-                            <div class="header-link" style="border-left: 1px solid #C4C4C4; border-right: none !important; font-size:16px; width:110px;">
+                        <asp:HyperLink ID="hLnk_Admin" Width="150px" ToolTip="Admin / Settings" runat="server" NavigateUrl="~/System_Management/Admin.aspx">
+                            <div class="header-link" style=" font-size:16px;">
                                 <i class="fa fa-cog" style="color:black;"></i>&nbsp;&nbsp;Admin
                             </div>
                         </asp:HyperLink>
                     </td>
-                    <td style="border-left: 1px solid #C4C4C4;">
-                        <div class="loginSection">
-                            <i style="font-size: 32px; color: #cecece;" class="ion-ios-contact-outline"></i>
-                            <asp:Label runat="server" ID="lbl_StaffNumber" Style="font-size: 10pt;" />
-                            <asp:LinkButton ID="link_Logout" runat="server" CausesValidation="false" OnClick="lnk_Logout_Click">
-                                <i class="fa fa-sign-out" style="font-size:32px; color:#000; float:right;"></i>
+                    <td style="width:100px">
+                        <div style="padding-right:50px">
+                            <asp:LinkButton ID="link_Logout" runat="server" CausesValidation="false" OnClick="lnk_Logout_Click" ToolTip="Log Out">
+                                <i class="fa fa-sign-out" style="font-size:20px; color:#000; float:right;"></i>
                             </asp:LinkButton>
                         </div>
                     </td>
@@ -64,4 +57,5 @@
     </form>
   
 </body>
+   
 </html>

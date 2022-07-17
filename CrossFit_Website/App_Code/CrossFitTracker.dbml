@@ -55,4 +55,99 @@
       <Column Name="DiaryEntryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.AdaptiveOptions_Insert" Method="AdaptiveOptions_Insert">
+    <Parameter Name="AdaptiveOption" Parameter="adaptiveOption" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.AdaptiveOptions_Update" Method="AdaptiveOptions_Update">
+    <Parameter Name="AdaptiveOptionID" Parameter="adaptiveOptionID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AdaptiveOption" Parameter="adaptiveOption" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.AdaptiveOptions_ViewAll" Method="AdaptiveOptions_ViewAll">
+    <ElementType Name="AdaptiveOptions_ViewAllResult">
+      <Column Name="AdaptiveOptionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AdaptiveOption" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Divisions_ViewAll" Method="Divisions_ViewAll">
+    <ElementType Name="Divisions_ViewAllResult">
+      <Column Name="DivisionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DivisionName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Divisions_Insert" Method="Divisions_Insert">
+    <Parameter Name="DivisionName" Parameter="divisionName" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Divisions_Update" Method="Divisions_Update">
+    <Parameter Name="DivisionID" Parameter="divisionID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DivisionName" Parameter="divisionName" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ExerciseAreas_Insert" Method="ExerciseAreas_Insert">
+    <Parameter Name="ExerciseAreaDescription" Parameter="exerciseAreaDescription" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ExerciseAreas_Update" Method="ExerciseAreas_Update">
+    <Parameter Name="ExerciseBodyAreaID" Parameter="exerciseBodyAreaID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ExerciseAreaDescription" Parameter="exerciseAreaDescription" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ExerciseAreas_ViewAll" Method="ExerciseAreas_ViewAll">
+    <ElementType Name="ExerciseAreas_ViewAllResult">
+      <Column Name="ExerciseBodyAreaID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ExerciseAreaDescription" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.EventNumbers_Insert" Method="EventNumbers_Insert">
+    <Parameter Name="EventNumberDescription" Parameter="eventNumberDescription" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.EventNumbers_Update" Method="EventNumbers_Update">
+    <Parameter Name="EventNumberID" Parameter="eventNumberID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EventNumberDescription" Parameter="eventNumberDescription" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.EventNumbers_ViewAll" Method="EventNumbers_ViewAll">
+    <ElementType Name="EventNumbers_ViewAllResult">
+      <Column Name="EventNumberID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EventNumberDescription" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Scales_Insert" Method="Scales_Insert">
+    <Parameter Name="ScaleDescription" Parameter="scaleDescription" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Scales_ViewAll" Method="Scales_ViewAll">
+    <ElementType Name="Scales_ViewAllResult">
+      <Column Name="ScaleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ScaleDescription" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Scales_Update" Method="Scales_Update">
+    <Parameter Name="ScaleID" Parameter="scaleID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ScaleDescription" Parameter="scaleDescription" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Exercises_Insert" Method="Exercises_Insert">
+    <Parameter Name="Exercise" Parameter="exercise" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ExerciseDescription" Parameter="exerciseDescription" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Exercises_Update" Method="Exercises_Update">
+    <Parameter Name="ExerciseID" Parameter="exerciseID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Exercise" Parameter="exercise" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ExerciseDescription" Parameter="exerciseDescription" Type="System.String" DbType="VarChar(500)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Exercises_ViewAll" Method="Exercises_ViewAll">
+    <ElementType Name="Exercises_ViewAllResult">
+      <Column Name="ExerciseID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ExerciseBodyAreaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Exercise" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ExerciseDescription" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ExerciseAreaDescription" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

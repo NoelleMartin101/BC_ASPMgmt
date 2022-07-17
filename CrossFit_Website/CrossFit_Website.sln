@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CrossFit_Website", ".", "{B1D76F34-585F-4F59-B3D7-D9B5AF0C82B9}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CCRALS_Website", ".", "{B1D76F34-585F-4F59-B3D7-D9B5AF0C82B9}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_53718"
@@ -36,6 +36,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {A9C5EA09-88E0-4C13-ABEE-C17BE12161E6}
+		SolutionGuid = {E2A1DA63-C197-4936-B775-58B95C4F785B}
 	EndGlobalSection
 EndGlobal

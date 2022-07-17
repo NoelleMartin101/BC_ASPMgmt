@@ -109,6 +109,132 @@ public partial class CrossFitTrackerDataContext : System.Data.Linq.DataContext
 		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 		return ((ISingleResult<DiaryEntries_ViewAllResult>)(result.ReturnValue));
 	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AdaptiveOptions_Insert")]
+	public int AdaptiveOptions_Insert([global::System.Data.Linq.Mapping.ParameterAttribute(Name="AdaptiveOption", DbType="VarChar(50)")] string adaptiveOption)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), adaptiveOption);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AdaptiveOptions_Update")]
+	public int AdaptiveOptions_Update([global::System.Data.Linq.Mapping.ParameterAttribute(Name="AdaptiveOptionID", DbType="Int")] System.Nullable<int> adaptiveOptionID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="AdaptiveOption", DbType="VarChar(50)")] string adaptiveOption)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), adaptiveOptionID, adaptiveOption);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AdaptiveOptions_ViewAll")]
+	public ISingleResult<AdaptiveOptions_ViewAllResult> AdaptiveOptions_ViewAll()
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		return ((ISingleResult<AdaptiveOptions_ViewAllResult>)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Divisions_ViewAll")]
+	public ISingleResult<Divisions_ViewAllResult> Divisions_ViewAll()
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		return ((ISingleResult<Divisions_ViewAllResult>)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Divisions_Insert")]
+	public int Divisions_Insert([global::System.Data.Linq.Mapping.ParameterAttribute(Name="DivisionName", DbType="VarChar(50)")] string divisionName)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), divisionName);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Divisions_Update")]
+	public int Divisions_Update([global::System.Data.Linq.Mapping.ParameterAttribute(Name="DivisionID", DbType="Int")] System.Nullable<int> divisionID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DivisionName", DbType="VarChar(50)")] string divisionName)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), divisionID, divisionName);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ExerciseAreas_Insert")]
+	public int ExerciseAreas_Insert([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ExerciseAreaDescription", DbType="VarChar(50)")] string exerciseAreaDescription)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), exerciseAreaDescription);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ExerciseAreas_Update")]
+	public int ExerciseAreas_Update([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ExerciseBodyAreaID", DbType="Int")] System.Nullable<int> exerciseBodyAreaID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ExerciseAreaDescription", DbType="VarChar(50)")] string exerciseAreaDescription)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), exerciseBodyAreaID, exerciseAreaDescription);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ExerciseAreas_ViewAll")]
+	public ISingleResult<ExerciseAreas_ViewAllResult> ExerciseAreas_ViewAll()
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		return ((ISingleResult<ExerciseAreas_ViewAllResult>)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.EventNumbers_Insert")]
+	public int EventNumbers_Insert([global::System.Data.Linq.Mapping.ParameterAttribute(Name="EventNumberDescription", DbType="VarChar(50)")] string eventNumberDescription)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), eventNumberDescription);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.EventNumbers_Update")]
+	public int EventNumbers_Update([global::System.Data.Linq.Mapping.ParameterAttribute(Name="EventNumberID", DbType="Int")] System.Nullable<int> eventNumberID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EventNumberDescription", DbType="VarChar(50)")] string eventNumberDescription)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), eventNumberID, eventNumberDescription);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.EventNumbers_ViewAll")]
+	public ISingleResult<EventNumbers_ViewAllResult> EventNumbers_ViewAll()
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		return ((ISingleResult<EventNumbers_ViewAllResult>)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Scales_Insert")]
+	public int Scales_Insert([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ScaleDescription", DbType="VarChar(50)")] string scaleDescription)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), scaleDescription);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Scales_ViewAll")]
+	public ISingleResult<Scales_ViewAllResult> Scales_ViewAll()
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		return ((ISingleResult<Scales_ViewAllResult>)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Scales_Update")]
+	public int Scales_Update([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ScaleID", DbType="Int")] System.Nullable<int> scaleID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ScaleDescription", DbType="VarChar(50)")] string scaleDescription)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), scaleID, scaleDescription);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Exercises_Insert")]
+	public int Exercises_Insert([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Exercise", DbType="VarChar(50)")] string exercise, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ExerciseDescription", DbType="VarChar(50)")] string exerciseDescription)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), exercise, exerciseDescription);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Exercises_Update")]
+	public int Exercises_Update([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ExerciseID", DbType="Int")] System.Nullable<int> exerciseID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Exercise", DbType="VarChar(50)")] string exercise, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ExerciseDescription", DbType="VarChar(500)")] string exerciseDescription)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), exerciseID, exercise, exerciseDescription);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Exercises_ViewAll")]
+	public ISingleResult<Exercises_ViewAllResult> Exercises_ViewAll()
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		return ((ISingleResult<Exercises_ViewAllResult>)(result.ReturnValue));
+	}
 }
 
 public partial class Countries_ViewAllResult
@@ -436,6 +562,324 @@ public partial class DiaryEntries_ViewAllResult
 			if ((this._DiaryEntryDate != value))
 			{
 				this._DiaryEntryDate = value;
+			}
+		}
+	}
+}
+
+public partial class AdaptiveOptions_ViewAllResult
+{
+	
+	private int _AdaptiveOptionID;
+	
+	private string _AdaptiveOption;
+	
+	public AdaptiveOptions_ViewAllResult()
+	{
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AdaptiveOptionID", DbType="Int NOT NULL")]
+	public int AdaptiveOptionID
+	{
+		get
+		{
+			return this._AdaptiveOptionID;
+		}
+		set
+		{
+			if ((this._AdaptiveOptionID != value))
+			{
+				this._AdaptiveOptionID = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AdaptiveOption", DbType="VarChar(50)")]
+	public string AdaptiveOption
+	{
+		get
+		{
+			return this._AdaptiveOption;
+		}
+		set
+		{
+			if ((this._AdaptiveOption != value))
+			{
+				this._AdaptiveOption = value;
+			}
+		}
+	}
+}
+
+public partial class Divisions_ViewAllResult
+{
+	
+	private int _DivisionID;
+	
+	private string _DivisionName;
+	
+	public Divisions_ViewAllResult()
+	{
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DivisionID", DbType="Int NOT NULL")]
+	public int DivisionID
+	{
+		get
+		{
+			return this._DivisionID;
+		}
+		set
+		{
+			if ((this._DivisionID != value))
+			{
+				this._DivisionID = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DivisionName", DbType="VarChar(50)")]
+	public string DivisionName
+	{
+		get
+		{
+			return this._DivisionName;
+		}
+		set
+		{
+			if ((this._DivisionName != value))
+			{
+				this._DivisionName = value;
+			}
+		}
+	}
+}
+
+public partial class ExerciseAreas_ViewAllResult
+{
+	
+	private int _ExerciseBodyAreaID;
+	
+	private string _ExerciseAreaDescription;
+	
+	public ExerciseAreas_ViewAllResult()
+	{
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExerciseBodyAreaID", DbType="Int NOT NULL")]
+	public int ExerciseBodyAreaID
+	{
+		get
+		{
+			return this._ExerciseBodyAreaID;
+		}
+		set
+		{
+			if ((this._ExerciseBodyAreaID != value))
+			{
+				this._ExerciseBodyAreaID = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExerciseAreaDescription", DbType="VarChar(50)")]
+	public string ExerciseAreaDescription
+	{
+		get
+		{
+			return this._ExerciseAreaDescription;
+		}
+		set
+		{
+			if ((this._ExerciseAreaDescription != value))
+			{
+				this._ExerciseAreaDescription = value;
+			}
+		}
+	}
+}
+
+public partial class EventNumbers_ViewAllResult
+{
+	
+	private int _EventNumberID;
+	
+	private string _EventNumberDescription;
+	
+	public EventNumbers_ViewAllResult()
+	{
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EventNumberID", DbType="Int NOT NULL")]
+	public int EventNumberID
+	{
+		get
+		{
+			return this._EventNumberID;
+		}
+		set
+		{
+			if ((this._EventNumberID != value))
+			{
+				this._EventNumberID = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EventNumberDescription", DbType="VarChar(10)")]
+	public string EventNumberDescription
+	{
+		get
+		{
+			return this._EventNumberDescription;
+		}
+		set
+		{
+			if ((this._EventNumberDescription != value))
+			{
+				this._EventNumberDescription = value;
+			}
+		}
+	}
+}
+
+public partial class Scales_ViewAllResult
+{
+	
+	private int _ScaleID;
+	
+	private string _ScaleDescription;
+	
+	public Scales_ViewAllResult()
+	{
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ScaleID", DbType="Int NOT NULL")]
+	public int ScaleID
+	{
+		get
+		{
+			return this._ScaleID;
+		}
+		set
+		{
+			if ((this._ScaleID != value))
+			{
+				this._ScaleID = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ScaleDescription", DbType="VarChar(50)")]
+	public string ScaleDescription
+	{
+		get
+		{
+			return this._ScaleDescription;
+		}
+		set
+		{
+			if ((this._ScaleDescription != value))
+			{
+				this._ScaleDescription = value;
+			}
+		}
+	}
+}
+
+public partial class Exercises_ViewAllResult
+{
+	
+	private int _ExerciseID;
+	
+	private System.Nullable<int> _ExerciseBodyAreaID;
+	
+	private string _Exercise;
+	
+	private string _ExerciseDescription;
+	
+	private string _ExerciseAreaDescription;
+	
+	public Exercises_ViewAllResult()
+	{
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExerciseID", DbType="Int NOT NULL")]
+	public int ExerciseID
+	{
+		get
+		{
+			return this._ExerciseID;
+		}
+		set
+		{
+			if ((this._ExerciseID != value))
+			{
+				this._ExerciseID = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExerciseBodyAreaID", DbType="Int")]
+	public System.Nullable<int> ExerciseBodyAreaID
+	{
+		get
+		{
+			return this._ExerciseBodyAreaID;
+		}
+		set
+		{
+			if ((this._ExerciseBodyAreaID != value))
+			{
+				this._ExerciseBodyAreaID = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Exercise", DbType="VarChar(50)")]
+	public string Exercise
+	{
+		get
+		{
+			return this._Exercise;
+		}
+		set
+		{
+			if ((this._Exercise != value))
+			{
+				this._Exercise = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExerciseDescription", DbType="VarChar(500)")]
+	public string ExerciseDescription
+	{
+		get
+		{
+			return this._ExerciseDescription;
+		}
+		set
+		{
+			if ((this._ExerciseDescription != value))
+			{
+				this._ExerciseDescription = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExerciseAreaDescription", DbType="VarChar(50)")]
+	public string ExerciseAreaDescription
+	{
+		get
+		{
+			return this._ExerciseAreaDescription;
+		}
+		set
+		{
+			if ((this._ExerciseAreaDescription != value))
+			{
+				this._ExerciseAreaDescription = value;
 			}
 		}
 	}

@@ -33,7 +33,7 @@
             <tr>
                 <td>
                     <asp:TextBox ID="txtDiaryEntry" TextMode="MultiLine" runat="server" Height="300px" Width="600px" />
-                    <%-- <telerik:RadEditor RenderMode="Lightweight" runat="server" ID="txtDiaryEntry" Height="300px" Width="1000px" EditModes="Design" BackColor="White" 
+                     <telerik:RadEditor RenderMode="Lightweight" runat="server" ID="radDiaryEntry" Height="300px" Width="1000px" EditModes="Design" BackColor="White" 
                         OnClientLoad="OnClientLoad" ContentFilters="ConvertToXhtml" Enabled="true">
                     <Tools>
                         <telerik:EditorToolGroup>
@@ -51,7 +51,7 @@
                             <telerik:EditorTool Name="Subscript" />
                         </telerik:EditorToolGroup>
                     </Tools>
-                </telerik:RadEditor>--%>
+                </telerik:RadEditor>
                 </td>
 
             </tr>

@@ -15,12 +15,12 @@
                         <a class="list-group-item list-group-item-action" href="Affiliates_List.aspx?returnurl=Admin.aspx">Affiliates</a>
                         <a class="list-group-item list-group-item-action" href="Countries_List.aspx?returnurl=Admin.aspx">Countries</a>
                         <a class="list-group-item list-group-item-action" href="Competitions_List.aspx?returnurl=Admin.aspx">Competitions</a>
-                        <a class="list-group-item list-group-item-action" href="Competitions_List.aspx?returnurl=Admin.aspx">Divisions</a>
-                        <a class="list-group-item list-group-item-action" href="Competitions_List.aspx?returnurl=Admin.aspx">Event Numbers</a>
-                        <a class="list-group-item list-group-item-action" href="Competitions_List.aspx?returnurl=Admin.aspx">Exercise Areas</a>
-                        <a class="list-group-item list-group-item-action" href="Competitions_List.aspx?returnurl=Admin.aspx">Exercises</a>
-                        <a class="list-group-item list-group-item-action" href="Competitions_List.aspx?returnurl=Admin.aspx">Scales</a>
-                        <a class="list-group-item list-group-item-action" href="AdaptiveOptions_List.aspx?returnurl=Admin.aspx">System Roles</a>
+                        <a class="list-group-item list-group-item-action" href="Divisions_List.aspx?returnurl=Admin.aspx">Divisions</a>
+                        <a class="list-group-item list-group-item-action" href="EventNumbers_List.aspx?returnurl=Admin.aspx">Event Numbers</a>
+                        <a class="list-group-item list-group-item-action" href="ExerciseAreas_List.aspx?returnurl=Admin.aspx">Exercise Areas</a>
+                        <a class="list-group-item list-group-item-action" href="Exercises_List.aspx?returnurl=Admin.aspx">Exercises</a>
+                        <a class="list-group-item list-group-item-action" href="Scales_List.aspx?returnurl=Admin.aspx">Scales</a>
+                        <%--<a class="list-group-item list-group-item-action" href="AdaptiveOptions_List.aspx?returnurl=Admin.aspx">System Roles</a>--%>
                     </div>
                 </td>
                 <td style="width: 33%;  vertical-align: top;">
