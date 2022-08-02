@@ -49,6 +49,7 @@ body {
     padding: 18px;
     font-size: 20px;
     float: left;
+    border-right: 1px solid #C4C4C4;
     background: #fff;
     cursor: pointer;
     box-sizing: border-box;
@@ -231,25 +232,20 @@ a.adminAddBtn, a.adminAddBtn:hover {
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
     background-image: linear-gradient(to bottom, #4B0082, #CDB5CD);
 }
-
-#containerHeader {
-    text-align: justify;
-    width: 100%;
+.totalEventsPanel {
+    border-color: #0081fdba;
+    background-color: #0081fd1f;
+    margin: 3px !Important;
+}
+.navbar {
+    display: flex;
+    background-color: #e4e5e6;
+    font-size: 2rem;
+    height: 2.5rem;
 }
 
-    #containerHeader > div {
-        width: 100px;
-        height: 100px;
-        vertical-align: top;
-        display: inline-block;
-        *display: inline;
-        zoom: 1;
-        background: red;
-    }
-
-span {
-    width: 100%;
-    display: inline-block;
-    font-size: 0;
-    line-height: 0
+.menu {
+    margin: 0 3rem;
+    justify-content: space-around;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }

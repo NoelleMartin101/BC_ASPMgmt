@@ -53,11 +53,10 @@ public partial class Divisions_List : System.Web.UI.Page
         try
         {
             GridEditableItem editedItem = e.Item as GridEditableItem;
-            int divisionID = (int)editedItem.GetDataKeyValue("DivisionID");
 
             var divName = editedItem.FindControl("txtDivisionName") as TextBox;
             string DivisionName = divName.Text;
-            db.Divisions_Update(divisionID,DivisionName);
+            db.Divisions_Insert(DivisionName);
             grid_Divisions.Rebind();
         }
         catch

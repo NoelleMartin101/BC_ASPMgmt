@@ -19,7 +19,13 @@ public partial class Default : System.Web.UI.Page
 
     private void ManageUserPageAccess()
     {
-        Response.Redirect("~/Admin_Users/Dashboard.aspx");
-          
+        CrossFitTrackerDataContext db = new CrossFitTrackerDataContext();
+        string result = "";
+        db.VerifyUser(txtUserName.Text, txtPassword.Text, ref result);
+        if (result == "Verified")
+            Response.Redirect("~/Admin_Users/Dashboard.aspx");
+        else lblNotVerified.Text = "You do not have access";
+
+
     }
 }

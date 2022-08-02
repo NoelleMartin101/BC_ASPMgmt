@@ -14,33 +14,32 @@
         <asp:LinkButton ID="lnk_Add" runat="server" CssClass="btn btn-default" PostBackUrl="AddDiaryEntry.aspx?returnurl=~/DiaryEntries/ViewDiaryEntries.aspx"><span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;&nbsp; Add&nbsp;&nbsp;&nbsp;</asp:LinkButton>
     </div>
     <div>
-        <asp:Repeater ID="repeater_DeletedTaskStatus" runat="server" DataSourceID="SqlDS_DiaryEntries_ViewAll" Visible="true">
+        <asp:Repeater ID="repeater_JournalEntries" runat="server" DataSourceID="SqlDS_DiaryEntries_ViewAll" Visible="true">
             <HeaderTemplate>
+                <hr />
                 <table width="100%">
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
             </HeaderTemplate>
             <ItemTemplate>
                 <tr>
-                    <td style="width:150px; vertical-align: top;">
-                        <asp:Label runat="server" ID="title" Text='<%# Eval("DiaryEntryTitle") %>' Font-Bold="true" /><br />
-                        <asp:Label runat="server" ID="date" Text='<%# String.Format("{0:dd/MM/yyyy HH:mm}",Eval("DiaryEntryDate")) %>' />
-                        </td>
-                    <td style="width:600px; vertical-align: top;">
-                        <asp:Label runat="server" ID="entry" Text='<%# Eval("DiaryEntry") %>' />
+                    <td style="width: 150px; vertical-align: top;">
+                        <asp:Label runat="server" ID="title" Text='<%# Eval("DiaryEntryTitle") %>' Font-Bold="true" Font-Size="12pt" ForeColor="Black" /><br />
+                        <asp:Label runat="server" ID="date" Text='<%# String.Format("{0:dd/MM/yyyy HH:mm}",Eval("DiaryEntryDate")) %>' Font-Size="10pt" ForeColor="Black" />                        
                     </td>
-                    <td style="width:600px">
+                    <td style="vertical-align: top;">
+                        <asp:Label runat="server" ID="entry" Text='<%# Eval("DiaryEntry") %>' Font-Size="10pt" ForeColor="Black" />
                     </td>
                 </tr>
-                <tr><td>&nbsp;</td></tr>
+                <tr>
+                    <td colspan="2">
+                        <hr />
+                    </td>
+                </tr>
             </ItemTemplate>
             <FooterTemplate>
                 </table>
             </FooterTemplate>
         </asp:Repeater>
-        <asp:SqlDataSource ID="SqlDS_DiaryEntries_ViewAll" runat="server" ConnectionString="<%$ConnectionStrings:CrossFitConnectionString %>" SelectCommand="DiaryEntries_ViewAll" SelectCommandType="StoredProcedure" />
+        <asp:SqlDataSource ID="SqlDS_DiaryEntries_ViewAll" runat="server" ConnectionString="<%$ConnectionStrings:CrossfitTrackerConnectionString %>" SelectCommand="DiaryEntries_ViewAll" SelectCommandType="StoredProcedure" />
     </div>
 </asp:Content>
 

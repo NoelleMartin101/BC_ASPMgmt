@@ -5,7 +5,6 @@
 <asp:Content ID="pageHeader" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="pageContent" ContentPlaceHolderID="body" runat="Server">
-    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div class="row managementPageHeader">
         <div class="col-lg-12 adminButtons">
             <asp:LinkButton runat="server" ID="btn_Back" Style="float: left;" CausesValidation="false"> <span class="glyphicon glyphicon-arrow-left"></span>&nbsp; Back</asp:LinkButton>
@@ -48,6 +47,6 @@
             </MasterTableView>
         </telerik:RadGrid>
     </div>
-    <asp:SqlDataSource ID="SqlDs_EventNumbers_ViewAll" runat="server" ConnectionString="<%$ ConnectionStrings:CrossFitConnectionString %>" SelectCommand="EventNumbers_ViewAll" SelectCommandType="StoredProcedure" />
+    <asp:SqlDataSource ID="SqlDs_EventNumbers_ViewAll" runat="server" ConnectionString="<%$ ConnectionStrings:CrossfitTrackerConnectionString %>" SelectCommand="EventNumbers_ViewAll" SelectCommandType="StoredProcedure" />
 </asp:Content>
 

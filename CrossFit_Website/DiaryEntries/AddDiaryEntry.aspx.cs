@@ -20,7 +20,7 @@ public partial class AddDiaryEntry : System.Web.UI.Page
     {
         CrossFitTrackerDataContext db = new CrossFitTrackerDataContext();
 
-        db.DiaryEntries_Insert(txtTitle.Text, txtDiaryEntry.Text);
+        db.DiaryEntries_Insert(txtTitle.Text, txtDiaryEntry.Content);
 
         Response.Redirect("~/DiaryEntries/ViewDiaryEntries.aspx");
     }

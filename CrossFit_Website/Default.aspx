@@ -20,13 +20,29 @@
                 <br />
             </div>
             <div>
-                <asp:LinkButton runat="server" ID="btn_Connect" CssClass="connectBtn" OnClick="btn_Connect_Click">
+                <table class="logInTable">
+                    <tr>
+                        <td>UserName:</td>
+                        <td>
+                            <asp:TextBox ID="txtUserName" runat="server" Width="400px" MaxLength="25" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Password:</td>
+                        <td>
+                            <asp:TextBox ID="txtPassword" runat="server" Width="400px" MaxLength="15" />                            
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div>              
+                <asp:LinkButton runat="server" ID="btn_Connect" CssClass="btn btn-success" OnClick="btn_Connect_Click">
                     <div class="btnContent" style="font-size:44px;">
                         Login
                     </div>
                 </asp:LinkButton>
             </div>
-            <asp:Label ID="lbl_StaffNumber" runat="server" Style="font-size: 14px; color: #000;" FormatString="Logging in as  &nbsp;&nbsp;<b>{0}</b>" />            
+            <asp:Label ID="lblNotVerified" runat="server" Style="font-size: 38px; color:red;"/>            
         </div>
     </form>
 </body>

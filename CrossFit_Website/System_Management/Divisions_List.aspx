@@ -5,7 +5,6 @@
 <asp:Content ID="pageHeader" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="pageContent" ContentPlaceHolderID="body" runat="Server">
-    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div class="row managementPageHeader">
         <div class="col-lg-12 adminButtons">
             <asp:LinkButton runat="server" ID="btn_Back" Style="float: left;" CausesValidation="false"> <span class="glyphicon glyphicon-arrow-left"></span>&nbsp; Back</asp:LinkButton>
@@ -17,7 +16,7 @@
     </div>
     <div>
         <br />
-        <telerik:RadGrid ID="grid_Divisions" PageSize="100" runat="server" AllowPaging="True" ShowStatusBar="True" GridLines="None" 
+        <telerik:RadGrid ID="grid_Divisions" PageSize="100" runat="server" AllowPaging="True" ShowStatusBar="True" GridLines="None" Height="700px"
             OnUpdateCommand="grid_Divisions_UpdateCommand" OnInsertCommand="grid_Divisions_InsertCommand"
             DataSourceID="SqlDs_Divisions_ViewAll" Width="50%" AllowSorting="True">
             <GroupingSettings CaseSensitive="false" />
@@ -46,8 +45,12 @@
                 </Columns>
                 <PagerStyle AlwaysVisible="false" />
             </MasterTableView>
+            
+              <ClientSettings>
+                <Scrolling AllowScroll="true" UseStaticHeaders="true" />
+            </ClientSettings>
         </telerik:RadGrid>
     </div>
-    <asp:SqlDataSource ID="SqlDs_Divisions_ViewAll" runat="server" ConnectionString="<%$ ConnectionStrings:CrossFitConnectionString %>" SelectCommand="Divisions_ViewAll" SelectCommandType="StoredProcedure" />
+    <asp:SqlDataSource ID="SqlDs_Divisions_ViewAll" runat="server" ConnectionString="<%$ ConnectionStrings:CrossfitTrackerConnectionString %>" SelectCommand="Divisions_ViewAll" SelectCommandType="StoredProcedure" />
 </asp:Content>
 

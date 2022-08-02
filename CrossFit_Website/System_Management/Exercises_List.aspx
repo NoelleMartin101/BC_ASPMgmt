@@ -5,7 +5,6 @@
 <asp:Content ID="pageHeader" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="pageContent" ContentPlaceHolderID="body" runat="Server">
-    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div class="row managementPageHeader">
         <div class="col-lg-12 adminButtons">
             <asp:LinkButton runat="server" ID="btn_Back" Style="float: left;" CausesValidation="false"> <span class="glyphicon glyphicon-arrow-left"></span>&nbsp; Back</asp:LinkButton>
@@ -19,7 +18,7 @@
         <br />
         <telerik:RadGrid ID="grid_Exercises" PageSize="20" runat="server" AllowPaging="True" ShowStatusBar="True" GridLines="None" 
             OnUpdateCommand="grid_Exercises_UpdateCommand" OnInsertCommand="grid_Exercises_InsertCommand"
-            DataSourceID="SqlDs_Exercises_ViewAll" Width="50%" AllowSorting="True">
+            DataSourceID="SqlDs_Exercises_ViewAll" Width="75%" AllowSorting="True">
             <GroupingSettings CaseSensitive="false" />
             <MasterTableView CommandItemDisplay="Top" EditMode="InPlace" AutoGenerateColumns="false" Font-Names="Arial" DataSourceID="SqlDs_Exercises_ViewAll" DataKeyNames="ExerciseID" AllowFilteringByColumn="false">
                 <CommandItemSettings ShowExportToExcelButton="false" ShowRefreshButton="false" ShowAddNewRecordButton="true" />
@@ -31,14 +30,17 @@
                         <ItemStyle Width="40px" HorizontalAlign="Center" />
                         <HeaderStyle Width="40px" HorizontalAlign="Center" Font-Bold="true" />
                     </telerik:GridTemplateColumn>
-                     <telerik:GridTemplateColumn DataField="ExerciseAreaDescription" HeaderText="Body Area" SortExpression="ExerciseAreaDescription" UniqueName="ExerciseAreaDescription" AllowFiltering="false">
+                     <telerik:GridTemplateColumn DataField="ExerciseBodyAreaID" HeaderText="Body Area" SortExpression="ExerciseBodyAreaID" UniqueName="ExerciseBodyAreaID" AllowFiltering="false">
                         <ItemTemplate>
                             <%# Eval("ExerciseAreaDescription")%>
                         </ItemTemplate>
                          <EditItemTemplate>
-                            <asp:DropDownList ID="ddlExerciseBodyAreaID" runat="server" Width="98%" TabIndex="1" DataSourceID="SqlDs_ExerciseBodyAreaID" AppendDataBoundItems="True" DataTextField="ExerciseAreaDescription" DataValueField="ExerciseBodyAreaID" />
-                            <asp:SqlDataSource ID="SqlDs_ExerciseBodyAreaID" runat="server" ConnectionString="<%$ ConnectionStrings:CrossFitConnectionString %>" SelectCommand="ExerciseAreas_ViewAll" SelectCommandType="StoredProcedure" />
-                        </EditItemTemplate>
+                           <telerik:RadComboBox ID="ddlExerciseBodyArea" runat="server" AppendDataBoundItems="true" Width="98%" TabIndex="1" DataSourceID="SqlDs_ExerciseBodyAreaID" DataTextField="ExerciseAreaDescription" DataValueField="ExerciseBodyAreaID" SelectedValue='<%# Bind("ExerciseBodyAreaID")%>'>
+                                <Items>
+                                    <telerik:RadComboBoxItem Text="Please Select" />
+                                </Items>
+                            </telerik:RadComboBox>
+                         </EditItemTemplate>
                         <ItemStyle Width="200px" />
                         <HeaderStyle Width="200px" Font-Bold="true" />
                     </telerik:GridTemplateColumn>
@@ -47,7 +49,7 @@
                             <%# Eval("Exercise")%>
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:TextBox ID="txtExercise" runat="server" TextMode="SingleLine" Width="50px" MaxLength="50" Text='<%# Eval("Exercise") %>' />
+                            <asp:TextBox ID="txtExercise" runat="server" TextMode="SingleLine" Width="200px" MaxLength="50" Text='<%# Eval("Exercise") %>' />
                         </EditItemTemplate>
                         <HeaderStyle HorizontalAlign="Left" Font-Bold="true" />
                     </telerik:GridTemplateColumn>
@@ -67,6 +69,7 @@
             </MasterTableView>
         </telerik:RadGrid>
     </div>
-    <asp:SqlDataSource ID="SqlDs_Exercises_ViewAll" runat="server" ConnectionString="<%$ ConnectionStrings:CrossFitConnectionString %>" SelectCommand="Exercises_ViewAll" SelectCommandType="StoredProcedure" />
+    <asp:SqlDataSource ID="SqlDs_ExerciseBodyAreaID" runat="server" ConnectionString="<%$ ConnectionStrings:CrossfitTrackerConnectionString %>" SelectCommand="ExerciseAreas_ViewAll" SelectCommandType="StoredProcedure" />
+    <asp:SqlDataSource ID="SqlDs_Exercises_ViewAll" runat="server" ConnectionString="<%$ ConnectionStrings:CrossfitTrackerConnectionString %>" SelectCommand="Exercises_ViewAll" SelectCommandType="StoredProcedure" />
 </asp:Content>
 

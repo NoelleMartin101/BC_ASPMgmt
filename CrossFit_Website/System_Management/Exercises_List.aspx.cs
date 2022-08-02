@@ -32,12 +32,14 @@ public partial class Exercises_List : System.Web.UI.Page
             GridEditableItem editedItem = e.Item as GridEditableItem;
             int ExerciseID = (int)editedItem.GetDataKeyValue("ExerciseID");
 
-            var code = editedItem.FindControl("txtExerciseCode") as TextBox;
+            var area = editedItem.FindControl("ddlExerciseBodyArea") as RadComboBox;
+            int bodyArea = int.Parse(area.SelectedValue);
+            var code = editedItem.FindControl("txtExercise") as TextBox;
             string ExerciseCode = code.Text;
             var desc = editedItem.FindControl("txtExerciseDescription") as TextBox;
             string ExerciseDescription = desc.Text;
 
-            db.Exercises_Update(ExerciseID, ExerciseCode, ExerciseDescription);
+            db.Exercises_Update(ExerciseID, bodyArea,ExerciseCode, ExerciseDescription);
             grid_Exercises.Rebind();
         }
         catch
@@ -56,12 +58,14 @@ public partial class Exercises_List : System.Web.UI.Page
         {
             GridEditableItem editedItem = e.Item as GridEditableItem;
 
-            var code = editedItem.FindControl("txtExerciseCode") as TextBox;
+            var area = editedItem.FindControl("ddlExerciseBodyArea") as RadComboBox;
+            int bodyArea = int.Parse(area.SelectedValue);
+            var code = editedItem.FindControl("txtExercise") as TextBox;
             string ExerciseCode = code.Text;
             var desc = editedItem.FindControl("txtExerciseDescription") as TextBox;
             string ExerciseDescription = desc.Text;
 
-            db.Exercises_Insert(ExerciseCode, ExerciseDescription);
+            db.Exercises_Insert(bodyArea,ExerciseCode, ExerciseDescription);
             grid_Exercises.Rebind();
         }
         catch

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CrossfitTracker" Class="CrossFitTrackerDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-0AH4JG6\SQLSERVER2019;Initial Catalog=CrossfitTracker;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="CrossFitConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-0AH4JG6\SQLSERVER2019;Initial Catalog=CrossfitTracker;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="CrossfitTrackerConnectionString" Provider="System.Data.SqlClient" />
   <Function Name="dbo.Countries_Insert" Method="Countries_Insert">
     <Parameter Name="CountryCode" Parameter="countryCode" Type="System.String" DbType="VarChar(5)" />
     <Parameter Name="CountryDescription" Parameter="countryDescription" Type="System.String" DbType="VarChar(100)" />
@@ -85,15 +85,6 @@
     <Parameter Name="DivisionName" Parameter="divisionName" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.ExerciseAreas_Insert" Method="ExerciseAreas_Insert">
-    <Parameter Name="ExerciseAreaDescription" Parameter="exerciseAreaDescription" Type="System.String" DbType="VarChar(50)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.ExerciseAreas_Update" Method="ExerciseAreas_Update">
-    <Parameter Name="ExerciseBodyAreaID" Parameter="exerciseBodyAreaID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="ExerciseAreaDescription" Parameter="exerciseAreaDescription" Type="System.String" DbType="VarChar(50)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.ExerciseAreas_ViewAll" Method="ExerciseAreas_ViewAll">
     <ElementType Name="ExerciseAreas_ViewAllResult">
       <Column Name="ExerciseBodyAreaID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -130,17 +121,6 @@
     <Parameter Name="ScaleDescription" Parameter="scaleDescription" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.Exercises_Insert" Method="Exercises_Insert">
-    <Parameter Name="Exercise" Parameter="exercise" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ExerciseDescription" Parameter="exerciseDescription" Type="System.String" DbType="VarChar(50)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.Exercises_Update" Method="Exercises_Update">
-    <Parameter Name="ExerciseID" Parameter="exerciseID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Exercise" Parameter="exercise" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="ExerciseDescription" Parameter="exerciseDescription" Type="System.String" DbType="VarChar(500)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.Exercises_ViewAll" Method="Exercises_ViewAll">
     <ElementType Name="Exercises_ViewAllResult">
       <Column Name="ExerciseID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -149,5 +129,202 @@
       <Column Name="ExerciseDescription" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
       <Column Name="ExerciseAreaDescription" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.RegisteredUserBenchmarks_SingleRecord" Method="RegisteredUserBenchmarks_SingleRecord">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="RegisteredUserBenchmarks_SingleRecordResult">
+      <Column Name="UserBenchmarkID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Snatch" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+      <Column Name="Fran" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+      <Column Name="Grace" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+      <Column Name="Sprint400m" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+      <Column Name="Deadlift" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+      <Column Name="Filthy50" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+      <Column Name="Helen" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+      <Column Name="Run5k" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+      <Column Name="Clean" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+      <Column Name="FightGoneBad" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+      <Column Name="Squat" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+      <Column Name="MaxPullUps" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.VerifyUser" Method="VerifyUser">
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="UserPassword" Parameter="userPassword" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="Verify" Parameter="verify" Type="System.String" DbType="VarChar(12)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Competitions_Insert" Method="Competitions_Insert">
+    <Parameter Name="CompetitionDescription" Parameter="competitionDescription" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Competitions_ShortView" Method="Competitions_ShortView">
+    <ElementType Name="Competitions_ShortViewResult">
+      <Column Name="CompetitionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CompetitionDescription" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Competitions_Update" Method="Competitions_Update">
+    <Parameter Name="CompetitionID" Parameter="competitionID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CompetitionDescription" Parameter="competitionDescription" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Competitions_ViewAll" Method="Competitions_ViewAll">
+    <ElementType Name="Competitions_ViewAllResult">
+      <Column Name="CompetitionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CompetitionDescription" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Affiliates_Insert" Method="Affiliates_Insert">
+    <Parameter Name="CountryID" Parameter="countryID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AffiliateName" Parameter="affiliateName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="ContactPhone" Parameter="contactPhone" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="ContactEmail" Parameter="contactEmail" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="AffilateAddress" Parameter="affilateAddress" Type="System.String" DbType="VarChar(500)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Affiliates_Update" Method="Affiliates_Update">
+    <Parameter Name="AffiliateID" Parameter="affiliateID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CountryID" Parameter="countryID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AffiliateName" Parameter="affiliateName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="ContactPhone" Parameter="contactPhone" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="ContactEmail" Parameter="contactEmail" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="AffilateAddress" Parameter="affilateAddress" Type="System.String" DbType="VarChar(500)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Exercises_Insert" Method="Exercises_Insert">
+    <Parameter Name="BodyAreaID" Parameter="bodyAreaID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Exercise" Parameter="exercise" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ExerciseDescription" Parameter="exerciseDescription" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Exercises_Update" Method="Exercises_Update">
+    <Parameter Name="ExerciseID" Parameter="exerciseID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="BodyAreaID" Parameter="bodyAreaID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Exercise" Parameter="exercise" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ExerciseDescription" Parameter="exerciseDescription" Type="System.String" DbType="VarChar(500)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ExerciseAreas_Insert" Method="ExerciseAreas_Insert">
+    <Parameter Name="ExerciseAreaDescription" Parameter="exerciseAreaDescription" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ExerciseAreas_Update" Method="ExerciseAreas_Update">
+    <Parameter Name="ExerciseBodyAreaID" Parameter="exerciseBodyAreaID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ExerciseAreaDescription" Parameter="exerciseAreaDescription" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.EventWorkouts_Insert" Method="EventWorkouts_Insert">
+    <Parameter Name="CompetitionEventID" Parameter="competitionEventID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EventNumberID" Parameter="eventNumberID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ExerciseID" Parameter="exerciseID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Reps" Parameter="reps" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DistanceInMeters" Parameter="distanceInMeters" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TimeInSeconds" Parameter="timeInSeconds" Type="System.Int32" DbType="Int" />
+    <Parameter Name="WorkoutDescription" Parameter="workoutDescription" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="SpecialRequirements" Parameter="specialRequirements" Type="System.String" DbType="VarChar(250)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.EventWorkouts_Update" Method="EventWorkouts_Update">
+    <Parameter Name="EventWorkoutID" Parameter="eventWorkoutID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CompetitionEventID" Parameter="competitionEventID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EventNumberID" Parameter="eventNumberID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ExerciseID" Parameter="exerciseID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Reps" Parameter="reps" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DistanceInMeters" Parameter="distanceInMeters" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TimeInSeconds" Parameter="timeInSeconds" Type="System.Int32" DbType="Int" />
+    <Parameter Name="WorkoutDescription" Parameter="workoutDescription" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="SpecialRequirements" Parameter="specialRequirements" Type="System.String" DbType="VarChar(250)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CompetitionToDoLists_Insert" Method="CompetitionToDoLists_Insert">
+    <Parameter Name="ListDetails" Parameter="listDetails" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="RAGStatus" Parameter="rAGStatus" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="IsCompleted" Parameter="isCompleted" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CompetitionToDoLists_Update" Method="CompetitionToDoLists_Update">
+    <Parameter Name="CompetitionToDoListID" Parameter="competitionToDoListID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ListDetails" Parameter="listDetails" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="RAGStatus" Parameter="rAGStatus" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="IsCompleted" Parameter="isCompleted" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CompetitionToDoLists_IsCompleted" Method="CompetitionToDoLists_IsCompleted">
+    <Parameter Name="CompetitionToDoListID" Parameter="competitionToDoListID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CompetitionEvents_SingleRecord" Method="CompetitionEvents_SingleRecord">
+    <Parameter Name="CompetitionEventID" Parameter="competitionEventID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="CompetitionEvents_SingleRecordResult">
+      <Column Name="CompetitionEventID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CompetitionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ScaleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NofEvents" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateOfEvent" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TimeOfLaunch" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="LengthOfEvent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EventLocationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AdaptiveOptionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ScaleDescription" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CompetitionDescription" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EventLocationDescription" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CompetitionEvents_View" Method="CompetitionEvents_View">
+    <Parameter Name="CompetitionEventID" Parameter="competitionEventID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="CompetitionEvents_ViewResult">
+      <Column Name="CompetitionDescription" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ScaleDescription" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EventLocationDescription" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NofEvents" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateOfEvent" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CompetitionEventID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TimeOfLaunch" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="LengthOfEvent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EventsAdded" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CompetitionEventWorkouts_ViewPerCompetition" Method="CompetitionEventWorkouts_ViewPerCompetition">
+    <Parameter Name="CompetitionEventID" Parameter="competitionEventID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="CompetitionEventWorkouts_ViewPerCompetitionResult">
+      <Column Name="CompetitionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EventNumberID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExerciseID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reps" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DistanceInMeters" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TimeInSeconds" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WorkoutDescription" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="EventWorkoutID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SpecialRequirements" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Exercise" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EventNumberDescription" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CompetitionEvents_Insert" Method="CompetitionEvents_Insert">
+    <Parameter Name="CompetitionID" Parameter="competitionID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ScaleID" Parameter="scaleID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NofEvents" Parameter="nofEvents" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DateTimeOfEvent" Parameter="dateTimeOfEvent" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="LengthOfEvent" Parameter="lengthOfEvent" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EventLocationID" Parameter="eventLocationID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AdaptiveOptionID" Parameter="adaptiveOptionID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CompetitionEvents_Update" Method="CompetitionEvents_Update">
+    <Parameter Name="CompetitionEventID" Parameter="competitionEventID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CompetitionID" Parameter="competitionID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ScaleID" Parameter="scaleID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NofEvents" Parameter="nofEvents" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DateTimeOfEvent" Parameter="dateTimeOfEvent" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="LengthOfEvent" Parameter="lengthOfEvent" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EventLocationID" Parameter="eventLocationID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AdaptiveOptionID" Parameter="adaptiveOptionID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CompetitionEvents_Completed" Method="CompetitionEvents_Completed">
+    <Parameter Name="CompetitionEventID" Parameter="competitionEventID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

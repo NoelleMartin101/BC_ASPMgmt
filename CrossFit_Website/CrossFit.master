@@ -8,38 +8,42 @@
     <title>CrossFit Competition and Athlete Tracker</title>
 
     <script src="https://kit.fontawesome.com/5bea803730.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="App_Themes/DefaultTheme/bootstrap.min.css"/>
+    <link rel="stylesheet" href="App_Themes/DefaultTheme/bootstrap.min.css" />
     <link rel="stylesheet" href="App_Themes/DefaultTheme/fontawesome.min.css" />
     <link rel="stylesheet" href="App_Themes/DefaultTheme/ionicons.min.css" />
     <link rel="stylesheet" href="App_Themes/DefaultTheme/jquery-ui.min.css" />
-    <link rel="stylesheet" href="App_Themes/DefaultTheme/Style.css"/>
+    <link rel="stylesheet" href="App_Themes/DefaultTheme/Style.css" />
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-      
-        <div id="header" >
+        <telerik:RadScriptManager ID="RadAjaxScriptManager" runat="server"></telerik:RadScriptManager>
+        <div id="header">
             <table style="width: 100%; background-color: white;">
                 <tr>
-                    <td style="width:95%">
+                    <td>
                         <asp:HyperLink ID="link_Home2" Width="80%" runat="server" NavigateUrl="~/Admin_Users/Dashboard.aspx">
                            <div class="header-link"><i class="fa fa-home"></i>&nbsp;&nbsp;&nbsp; CrossFit Competition & Athlete Tracker</div>
                         </asp:HyperLink>
+                    </td>
+                    <td align="right" style="width:100px">
                         <asp:HyperLink ID="HyperLink1" Width="150px" ToolTip="Journal Entries" runat="server" NavigateUrl="~/DiaryEntries/ViewDiaryEntries.aspx">
                             <div class="header-link" style="font-size:16px;">
                                 <i class="fa fa-file" style="color:black;"></i>&nbsp;&nbsp;Journal
                             </div>
                         </asp:HyperLink>
+                    </td>
+                    <td align="right" style="width:100px">
                         <asp:HyperLink ID="hLnk_Admin" Width="150px" ToolTip="Admin / Settings" runat="server" NavigateUrl="~/System_Management/Admin.aspx">
                             <div class="header-link" style=" font-size:16px;">
                                 <i class="fa fa-cog" style="color:black;"></i>&nbsp;&nbsp;Admin
                             </div>
                         </asp:HyperLink>
                     </td>
-                    <td style="width:100px">
-                        <div style="padding-right:50px">
+                    <td align="right" style="width:100px">
+                        <div style="padding-right: 50px">
                             <asp:LinkButton ID="link_Logout" runat="server" CausesValidation="false" OnClick="lnk_Logout_Click" ToolTip="Log Out">
                                 <i class="fa fa-sign-out" style="font-size:20px; color:#000; float:right;"></i>
                             </asp:LinkButton>
@@ -55,7 +59,7 @@
             </asp:ContentPlaceHolder>
         </div>
     </form>
-  
+
 </body>
-   
+
 </html>

@@ -53,12 +53,11 @@ public partial class EventNumbers_List : System.Web.UI.Page
         try
         {
             GridEditableItem editedItem = e.Item as GridEditableItem;
-            int EventNumberID = (int)editedItem.GetDataKeyValue("EventNumberID");
 
             var eventNumberDes = editedItem.FindControl("txtEventNumberDescription") as TextBox;
             string eventNumberDescription = eventNumberDes.Text;
 
-            db.EventNumbers_Update(EventNumberID, eventNumberDescription);
+            db.EventNumbers_Insert(eventNumberDescription);
             grid_EventNumbers.Rebind();
         }
         catch

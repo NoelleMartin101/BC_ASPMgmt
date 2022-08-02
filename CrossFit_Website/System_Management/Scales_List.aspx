@@ -5,7 +5,6 @@
 <asp:Content ID="pageHeader" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="pageContent" ContentPlaceHolderID="body" runat="Server">
-    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div class="row managementPageHeader">
         <div class="col-lg-12 adminButtons">
             <asp:LinkButton runat="server" ID="btn_Back" Style="float: left;" CausesValidation="false"> <span class="glyphicon glyphicon-arrow-left"></span>&nbsp; Back</asp:LinkButton>
@@ -31,15 +30,6 @@
                         <ItemStyle Width="40px" HorizontalAlign="Center" />
                         <HeaderStyle Width="40px" HorizontalAlign="Center" Font-Bold="true" />
                     </telerik:GridTemplateColumn>
-                    <telerik:GridTemplateColumn DataField="ScaleCode" SortExpression="ScaleCode" HeaderText="Code">
-                        <ItemTemplate>
-                            <%# Eval("ScaleCode")%>
-                        </ItemTemplate>
-                        <EditItemTemplate>
-                            <asp:TextBox ID="txtScaleCode" runat="server" TextMode="SingleLine" Width="50px" MaxLength="5" Text='<%# Eval("ScaleCode") %>' />
-                        </EditItemTemplate>
-                        <HeaderStyle HorizontalAlign="Left" Font-Bold="true" />
-                    </telerik:GridTemplateColumn>
                     <telerik:GridTemplateColumn DataField="ScaleDescription" SortExpression="ScaleDescription" HeaderText="Scale">
                         <ItemTemplate>
                             <%# Eval("ScaleDescription")%>
@@ -56,6 +46,6 @@
             </MasterTableView>
         </telerik:RadGrid>
     </div>
-    <asp:SqlDataSource ID="SqlDs_Scales_ViewAll" runat="server" ConnectionString="<%$ ConnectionStrings:CrossFitConnectionString %>" SelectCommand="Scales_ViewAll" SelectCommandType="StoredProcedure" />
+    <asp:SqlDataSource ID="SqlDs_Scales_ViewAll" runat="server" ConnectionString="<%$ ConnectionStrings:CrossfitTrackerConnectionString %>" SelectCommand="Scales_ViewAll" SelectCommandType="StoredProcedure" />
 </asp:Content>
 

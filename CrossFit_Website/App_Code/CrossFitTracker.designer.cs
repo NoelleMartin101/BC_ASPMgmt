@@ -32,7 +32,7 @@ public partial class CrossFitTrackerDataContext : System.Data.Linq.DataContext
   #endregion
 	
 	public CrossFitTrackerDataContext() : 
-			base(global::System.Configuration.ConfigurationManager.ConnectionStrings["CrossFitConnectionString"].ConnectionString, mappingSource)
+			base(global::System.Configuration.ConfigurationManager.ConnectionStrings["CrossfitTrackerConnectionString"].ConnectionString, mappingSource)
 	{
 		OnCreated();
 	}
@@ -152,20 +152,6 @@ public partial class CrossFitTrackerDataContext : System.Data.Linq.DataContext
 		return ((int)(result.ReturnValue));
 	}
 	
-	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ExerciseAreas_Insert")]
-	public int ExerciseAreas_Insert([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ExerciseAreaDescription", DbType="VarChar(50)")] string exerciseAreaDescription)
-	{
-		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), exerciseAreaDescription);
-		return ((int)(result.ReturnValue));
-	}
-	
-	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ExerciseAreas_Update")]
-	public int ExerciseAreas_Update([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ExerciseBodyAreaID", DbType="Int")] System.Nullable<int> exerciseBodyAreaID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ExerciseAreaDescription", DbType="VarChar(50)")] string exerciseAreaDescription)
-	{
-		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), exerciseBodyAreaID, exerciseAreaDescription);
-		return ((int)(result.ReturnValue));
-	}
-	
 	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ExerciseAreas_ViewAll")]
 	public ISingleResult<ExerciseAreas_ViewAllResult> ExerciseAreas_ViewAll()
 	{
@@ -215,25 +201,173 @@ public partial class CrossFitTrackerDataContext : System.Data.Linq.DataContext
 		return ((int)(result.ReturnValue));
 	}
 	
-	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Exercises_Insert")]
-	public int Exercises_Insert([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Exercise", DbType="VarChar(50)")] string exercise, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ExerciseDescription", DbType="VarChar(50)")] string exerciseDescription)
-	{
-		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), exercise, exerciseDescription);
-		return ((int)(result.ReturnValue));
-	}
-	
-	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Exercises_Update")]
-	public int Exercises_Update([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ExerciseID", DbType="Int")] System.Nullable<int> exerciseID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Exercise", DbType="VarChar(50)")] string exercise, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ExerciseDescription", DbType="VarChar(500)")] string exerciseDescription)
-	{
-		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), exerciseID, exercise, exerciseDescription);
-		return ((int)(result.ReturnValue));
-	}
-	
 	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Exercises_ViewAll")]
 	public ISingleResult<Exercises_ViewAllResult> Exercises_ViewAll()
 	{
 		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 		return ((ISingleResult<Exercises_ViewAllResult>)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.RegisteredUserBenchmarks_SingleRecord")]
+	public ISingleResult<RegisteredUserBenchmarks_SingleRecordResult> RegisteredUserBenchmarks_SingleRecord([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="Int")] System.Nullable<int> userID)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID);
+		return ((ISingleResult<RegisteredUserBenchmarks_SingleRecordResult>)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.VerifyUser")]
+	public int VerifyUser([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserName", DbType="VarChar(25)")] string userName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserPassword", DbType="VarChar(15)")] string userPassword, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Verify", DbType="VarChar(12)")] ref string verify)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userName, userPassword, verify);
+		verify = ((string)(result.GetParameterValue(2)));
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Competitions_Insert")]
+	public int Competitions_Insert([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CompetitionDescription", DbType="VarChar(50)")] string competitionDescription)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), competitionDescription);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Competitions_ShortView")]
+	public ISingleResult<Competitions_ShortViewResult> Competitions_ShortView()
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		return ((ISingleResult<Competitions_ShortViewResult>)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Competitions_Update")]
+	public int Competitions_Update([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CompetitionID", DbType="Int")] System.Nullable<int> competitionID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CompetitionDescription", DbType="VarChar(50)")] string competitionDescription)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), competitionID, competitionDescription);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Competitions_ViewAll")]
+	public ISingleResult<Competitions_ViewAllResult> Competitions_ViewAll()
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		return ((ISingleResult<Competitions_ViewAllResult>)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Affiliates_Insert")]
+	public int Affiliates_Insert([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CountryID", DbType="Int")] System.Nullable<int> countryID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="AffiliateName", DbType="VarChar(100)")] string affiliateName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ContactPhone", DbType="VarChar(20)")] string contactPhone, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ContactEmail", DbType="VarChar(100)")] string contactEmail, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="AffilateAddress", DbType="VarChar(500)")] string affilateAddress)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), countryID, affiliateName, contactPhone, contactEmail, affilateAddress);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Affiliates_Update")]
+	public int Affiliates_Update([global::System.Data.Linq.Mapping.ParameterAttribute(Name="AffiliateID", DbType="Int")] System.Nullable<int> affiliateID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CountryID", DbType="Int")] System.Nullable<int> countryID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="AffiliateName", DbType="VarChar(100)")] string affiliateName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ContactPhone", DbType="VarChar(20)")] string contactPhone, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ContactEmail", DbType="VarChar(100)")] string contactEmail, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="AffilateAddress", DbType="VarChar(500)")] string affilateAddress)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), affiliateID, countryID, affiliateName, contactPhone, contactEmail, affilateAddress);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Exercises_Insert")]
+	public int Exercises_Insert([global::System.Data.Linq.Mapping.ParameterAttribute(Name="BodyAreaID", DbType="Int")] System.Nullable<int> bodyAreaID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Exercise", DbType="VarChar(50)")] string exercise, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ExerciseDescription", DbType="VarChar(50)")] string exerciseDescription)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), bodyAreaID, exercise, exerciseDescription);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Exercises_Update")]
+	public int Exercises_Update([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ExerciseID", DbType="Int")] System.Nullable<int> exerciseID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BodyAreaID", DbType="Int")] System.Nullable<int> bodyAreaID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Exercise", DbType="VarChar(50)")] string exercise, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ExerciseDescription", DbType="VarChar(500)")] string exerciseDescription)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), exerciseID, bodyAreaID, exercise, exerciseDescription);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ExerciseAreas_Insert")]
+	public int ExerciseAreas_Insert([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ExerciseAreaDescription", DbType="VarChar(50)")] string exerciseAreaDescription)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), exerciseAreaDescription);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ExerciseAreas_Update")]
+	public int ExerciseAreas_Update([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ExerciseBodyAreaID", DbType="Int")] System.Nullable<int> exerciseBodyAreaID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ExerciseAreaDescription", DbType="VarChar(50)")] string exerciseAreaDescription)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), exerciseBodyAreaID, exerciseAreaDescription);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.EventWorkouts_Insert")]
+	public int EventWorkouts_Insert([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CompetitionEventID", DbType="Int")] System.Nullable<int> competitionEventID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EventNumberID", DbType="Int")] System.Nullable<int> eventNumberID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ExerciseID", DbType="Int")] System.Nullable<int> exerciseID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Reps", DbType="Int")] System.Nullable<int> reps, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DistanceInMeters", DbType="Int")] System.Nullable<int> distanceInMeters, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TimeInSeconds", DbType="Int")] System.Nullable<int> timeInSeconds, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="WorkoutDescription", DbType="VarChar(250)")] string workoutDescription, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SpecialRequirements", DbType="VarChar(250)")] string specialRequirements)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), competitionEventID, eventNumberID, exerciseID, reps, distanceInMeters, timeInSeconds, workoutDescription, specialRequirements);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.EventWorkouts_Update")]
+	public int EventWorkouts_Update([global::System.Data.Linq.Mapping.ParameterAttribute(Name="EventWorkoutID", DbType="Int")] System.Nullable<int> eventWorkoutID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CompetitionEventID", DbType="Int")] System.Nullable<int> competitionEventID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EventNumberID", DbType="Int")] System.Nullable<int> eventNumberID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ExerciseID", DbType="Int")] System.Nullable<int> exerciseID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Reps", DbType="Int")] System.Nullable<int> reps, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DistanceInMeters", DbType="Int")] System.Nullable<int> distanceInMeters, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TimeInSeconds", DbType="Int")] System.Nullable<int> timeInSeconds, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="WorkoutDescription", DbType="VarChar(250)")] string workoutDescription, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SpecialRequirements", DbType="VarChar(250)")] string specialRequirements)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), eventWorkoutID, competitionEventID, eventNumberID, exerciseID, reps, distanceInMeters, timeInSeconds, workoutDescription, specialRequirements);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CompetitionToDoLists_Insert")]
+	public int CompetitionToDoLists_Insert([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ListDetails", DbType="VarChar(150)")] string listDetails, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="RAGStatus", DbType="VarChar(1)")] string rAGStatus, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IsCompleted", DbType="Bit")] System.Nullable<bool> isCompleted)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), listDetails, rAGStatus, isCompleted);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CompetitionToDoLists_Update")]
+	public int CompetitionToDoLists_Update([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CompetitionToDoListID", DbType="Int")] System.Nullable<int> competitionToDoListID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ListDetails", DbType="VarChar(150)")] string listDetails, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="RAGStatus", DbType="VarChar(1)")] string rAGStatus, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IsCompleted", DbType="Bit")] System.Nullable<bool> isCompleted)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), competitionToDoListID, listDetails, rAGStatus, isCompleted);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CompetitionToDoLists_IsCompleted")]
+	public int CompetitionToDoLists_IsCompleted([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CompetitionToDoListID", DbType="Int")] System.Nullable<int> competitionToDoListID)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), competitionToDoListID);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CompetitionEvents_SingleRecord")]
+	public ISingleResult<CompetitionEvents_SingleRecordResult> CompetitionEvents_SingleRecord([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CompetitionEventID", DbType="Int")] System.Nullable<int> competitionEventID)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), competitionEventID);
+		return ((ISingleResult<CompetitionEvents_SingleRecordResult>)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CompetitionEvents_View")]
+	public ISingleResult<CompetitionEvents_ViewResult> CompetitionEvents_View([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CompetitionEventID", DbType="Int")] System.Nullable<int> competitionEventID)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), competitionEventID);
+		return ((ISingleResult<CompetitionEvents_ViewResult>)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CompetitionEventWorkouts_ViewPerCompetition")]
+	public ISingleResult<CompetitionEventWorkouts_ViewPerCompetitionResult> CompetitionEventWorkouts_ViewPerCompetition([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CompetitionEventID", DbType="Int")] System.Nullable<int> competitionEventID)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), competitionEventID);
+		return ((ISingleResult<CompetitionEventWorkouts_ViewPerCompetitionResult>)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CompetitionEvents_Insert")]
+	public int CompetitionEvents_Insert([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CompetitionID", DbType="Int")] System.Nullable<int> competitionID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ScaleID", DbType="Int")] System.Nullable<int> scaleID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NofEvents", DbType="Int")] System.Nullable<int> nofEvents, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DateTimeOfEvent", DbType="DateTime")] System.Nullable<System.DateTime> dateTimeOfEvent, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="LengthOfEvent", DbType="Int")] System.Nullable<int> lengthOfEvent, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EventLocationID", DbType="Int")] System.Nullable<int> eventLocationID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="AdaptiveOptionID", DbType="Int")] System.Nullable<int> adaptiveOptionID)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), competitionID, scaleID, nofEvents, dateTimeOfEvent, lengthOfEvent, eventLocationID, adaptiveOptionID);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CompetitionEvents_Update")]
+	public int CompetitionEvents_Update([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CompetitionEventID", DbType="Int")] System.Nullable<int> competitionEventID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CompetitionID", DbType="Int")] System.Nullable<int> competitionID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ScaleID", DbType="Int")] System.Nullable<int> scaleID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NofEvents", DbType="Int")] System.Nullable<int> nofEvents, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DateTimeOfEvent", DbType="DateTime")] System.Nullable<System.DateTime> dateTimeOfEvent, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="LengthOfEvent", DbType="Int")] System.Nullable<int> lengthOfEvent, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EventLocationID", DbType="Int")] System.Nullable<int> eventLocationID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="AdaptiveOptionID", DbType="Int")] System.Nullable<int> adaptiveOptionID)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), competitionEventID, competitionID, scaleID, nofEvents, dateTimeOfEvent, lengthOfEvent, eventLocationID, adaptiveOptionID);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CompetitionEvents_Completed")]
+	public int CompetitionEvents_Completed([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CompetitionEventID", DbType="Int")] System.Nullable<int> competitionEventID)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), competitionEventID);
+		return ((int)(result.ReturnValue));
 	}
 }
 
@@ -880,6 +1014,954 @@ public partial class Exercises_ViewAllResult
 			if ((this._ExerciseAreaDescription != value))
 			{
 				this._ExerciseAreaDescription = value;
+			}
+		}
+	}
+}
+
+public partial class RegisteredUserBenchmarks_SingleRecordResult
+{
+	
+	private int _UserBenchmarkID;
+	
+	private int _UserID;
+	
+	private System.Nullable<decimal> _Snatch;
+	
+	private System.Nullable<decimal> _Fran;
+	
+	private System.Nullable<decimal> _Grace;
+	
+	private System.Nullable<decimal> _Sprint400m;
+	
+	private System.Nullable<decimal> _Deadlift;
+	
+	private System.Nullable<decimal> _Filthy50;
+	
+	private System.Nullable<decimal> _Helen;
+	
+	private System.Nullable<decimal> _Run5k;
+	
+	private System.Nullable<decimal> _Clean;
+	
+	private System.Nullable<decimal> _FightGoneBad;
+	
+	private System.Nullable<decimal> _Squat;
+	
+	private System.Nullable<decimal> _MaxPullUps;
+	
+	public RegisteredUserBenchmarks_SingleRecordResult()
+	{
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserBenchmarkID", DbType="Int NOT NULL")]
+	public int UserBenchmarkID
+	{
+		get
+		{
+			return this._UserBenchmarkID;
+		}
+		set
+		{
+			if ((this._UserBenchmarkID != value))
+			{
+				this._UserBenchmarkID = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+	public int UserID
+	{
+		get
+		{
+			return this._UserID;
+		}
+		set
+		{
+			if ((this._UserID != value))
+			{
+				this._UserID = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Snatch", DbType="Decimal(6,2)")]
+	public System.Nullable<decimal> Snatch
+	{
+		get
+		{
+			return this._Snatch;
+		}
+		set
+		{
+			if ((this._Snatch != value))
+			{
+				this._Snatch = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fran", DbType="Decimal(6,2)")]
+	public System.Nullable<decimal> Fran
+	{
+		get
+		{
+			return this._Fran;
+		}
+		set
+		{
+			if ((this._Fran != value))
+			{
+				this._Fran = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Grace", DbType="Decimal(6,2)")]
+	public System.Nullable<decimal> Grace
+	{
+		get
+		{
+			return this._Grace;
+		}
+		set
+		{
+			if ((this._Grace != value))
+			{
+				this._Grace = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sprint400m", DbType="Decimal(6,2)")]
+	public System.Nullable<decimal> Sprint400m
+	{
+		get
+		{
+			return this._Sprint400m;
+		}
+		set
+		{
+			if ((this._Sprint400m != value))
+			{
+				this._Sprint400m = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Deadlift", DbType="Decimal(6,2)")]
+	public System.Nullable<decimal> Deadlift
+	{
+		get
+		{
+			return this._Deadlift;
+		}
+		set
+		{
+			if ((this._Deadlift != value))
+			{
+				this._Deadlift = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Filthy50", DbType="Decimal(6,2)")]
+	public System.Nullable<decimal> Filthy50
+	{
+		get
+		{
+			return this._Filthy50;
+		}
+		set
+		{
+			if ((this._Filthy50 != value))
+			{
+				this._Filthy50 = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Helen", DbType="Decimal(6,2)")]
+	public System.Nullable<decimal> Helen
+	{
+		get
+		{
+			return this._Helen;
+		}
+		set
+		{
+			if ((this._Helen != value))
+			{
+				this._Helen = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Run5k", DbType="Decimal(6,2)")]
+	public System.Nullable<decimal> Run5k
+	{
+		get
+		{
+			return this._Run5k;
+		}
+		set
+		{
+			if ((this._Run5k != value))
+			{
+				this._Run5k = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Clean", DbType="Decimal(6,2)")]
+	public System.Nullable<decimal> Clean
+	{
+		get
+		{
+			return this._Clean;
+		}
+		set
+		{
+			if ((this._Clean != value))
+			{
+				this._Clean = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FightGoneBad", DbType="Decimal(6,2)")]
+	public System.Nullable<decimal> FightGoneBad
+	{
+		get
+		{
+			return this._FightGoneBad;
+		}
+		set
+		{
+			if ((this._FightGoneBad != value))
+			{
+				this._FightGoneBad = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Squat", DbType="Decimal(6,2)")]
+	public System.Nullable<decimal> Squat
+	{
+		get
+		{
+			return this._Squat;
+		}
+		set
+		{
+			if ((this._Squat != value))
+			{
+				this._Squat = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaxPullUps", DbType="Decimal(6,2)")]
+	public System.Nullable<decimal> MaxPullUps
+	{
+		get
+		{
+			return this._MaxPullUps;
+		}
+		set
+		{
+			if ((this._MaxPullUps != value))
+			{
+				this._MaxPullUps = value;
+			}
+		}
+	}
+}
+
+public partial class Competitions_ShortViewResult
+{
+	
+	private int _CompetitionID;
+	
+	private string _CompetitionDescription;
+	
+	public Competitions_ShortViewResult()
+	{
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompetitionID", DbType="Int NOT NULL")]
+	public int CompetitionID
+	{
+		get
+		{
+			return this._CompetitionID;
+		}
+		set
+		{
+			if ((this._CompetitionID != value))
+			{
+				this._CompetitionID = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompetitionDescription", DbType="VarChar(50)")]
+	public string CompetitionDescription
+	{
+		get
+		{
+			return this._CompetitionDescription;
+		}
+		set
+		{
+			if ((this._CompetitionDescription != value))
+			{
+				this._CompetitionDescription = value;
+			}
+		}
+	}
+}
+
+public partial class Competitions_ViewAllResult
+{
+	
+	private int _CompetitionID;
+	
+	private string _CompetitionDescription;
+	
+	public Competitions_ViewAllResult()
+	{
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompetitionID", DbType="Int NOT NULL")]
+	public int CompetitionID
+	{
+		get
+		{
+			return this._CompetitionID;
+		}
+		set
+		{
+			if ((this._CompetitionID != value))
+			{
+				this._CompetitionID = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompetitionDescription", DbType="VarChar(50)")]
+	public string CompetitionDescription
+	{
+		get
+		{
+			return this._CompetitionDescription;
+		}
+		set
+		{
+			if ((this._CompetitionDescription != value))
+			{
+				this._CompetitionDescription = value;
+			}
+		}
+	}
+}
+
+public partial class CompetitionEvents_SingleRecordResult
+{
+	
+	private int _CompetitionEventID;
+	
+	private int _CompetitionID;
+	
+	private int _ScaleID;
+	
+	private System.Nullable<int> _NofEvents;
+	
+	private System.Nullable<System.DateTime> _DateOfEvent;
+	
+	private System.Nullable<System.TimeSpan> _TimeOfLaunch;
+	
+	private System.Nullable<int> _LengthOfEvent;
+	
+	private int _EventLocationID;
+	
+	private System.Nullable<int> _AdaptiveOptionID;
+	
+	private string _ScaleDescription;
+	
+	private string _CompetitionDescription;
+	
+	private string _EventLocationDescription;
+	
+	public CompetitionEvents_SingleRecordResult()
+	{
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompetitionEventID", DbType="Int NOT NULL")]
+	public int CompetitionEventID
+	{
+		get
+		{
+			return this._CompetitionEventID;
+		}
+		set
+		{
+			if ((this._CompetitionEventID != value))
+			{
+				this._CompetitionEventID = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompetitionID", DbType="Int NOT NULL")]
+	public int CompetitionID
+	{
+		get
+		{
+			return this._CompetitionID;
+		}
+		set
+		{
+			if ((this._CompetitionID != value))
+			{
+				this._CompetitionID = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ScaleID", DbType="Int NOT NULL")]
+	public int ScaleID
+	{
+		get
+		{
+			return this._ScaleID;
+		}
+		set
+		{
+			if ((this._ScaleID != value))
+			{
+				this._ScaleID = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NofEvents", DbType="Int")]
+	public System.Nullable<int> NofEvents
+	{
+		get
+		{
+			return this._NofEvents;
+		}
+		set
+		{
+			if ((this._NofEvents != value))
+			{
+				this._NofEvents = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateOfEvent", DbType="Date")]
+	public System.Nullable<System.DateTime> DateOfEvent
+	{
+		get
+		{
+			return this._DateOfEvent;
+		}
+		set
+		{
+			if ((this._DateOfEvent != value))
+			{
+				this._DateOfEvent = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TimeOfLaunch", DbType="Time")]
+	public System.Nullable<System.TimeSpan> TimeOfLaunch
+	{
+		get
+		{
+			return this._TimeOfLaunch;
+		}
+		set
+		{
+			if ((this._TimeOfLaunch != value))
+			{
+				this._TimeOfLaunch = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LengthOfEvent", DbType="Int")]
+	public System.Nullable<int> LengthOfEvent
+	{
+		get
+		{
+			return this._LengthOfEvent;
+		}
+		set
+		{
+			if ((this._LengthOfEvent != value))
+			{
+				this._LengthOfEvent = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EventLocationID", DbType="Int NOT NULL")]
+	public int EventLocationID
+	{
+		get
+		{
+			return this._EventLocationID;
+		}
+		set
+		{
+			if ((this._EventLocationID != value))
+			{
+				this._EventLocationID = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AdaptiveOptionID", DbType="Int")]
+	public System.Nullable<int> AdaptiveOptionID
+	{
+		get
+		{
+			return this._AdaptiveOptionID;
+		}
+		set
+		{
+			if ((this._AdaptiveOptionID != value))
+			{
+				this._AdaptiveOptionID = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ScaleDescription", DbType="VarChar(50)")]
+	public string ScaleDescription
+	{
+		get
+		{
+			return this._ScaleDescription;
+		}
+		set
+		{
+			if ((this._ScaleDescription != value))
+			{
+				this._ScaleDescription = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompetitionDescription", DbType="VarChar(50)")]
+	public string CompetitionDescription
+	{
+		get
+		{
+			return this._CompetitionDescription;
+		}
+		set
+		{
+			if ((this._CompetitionDescription != value))
+			{
+				this._CompetitionDescription = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EventLocationDescription", DbType="VarChar(50)")]
+	public string EventLocationDescription
+	{
+		get
+		{
+			return this._EventLocationDescription;
+		}
+		set
+		{
+			if ((this._EventLocationDescription != value))
+			{
+				this._EventLocationDescription = value;
+			}
+		}
+	}
+}
+
+public partial class CompetitionEvents_ViewResult
+{
+	
+	private string _CompetitionDescription;
+	
+	private string _ScaleDescription;
+	
+	private string _EventLocationDescription;
+	
+	private System.Nullable<int> _NofEvents;
+	
+	private System.Nullable<System.DateTime> _DateOfEvent;
+	
+	private int _CompetitionEventID;
+	
+	private System.Nullable<System.TimeSpan> _TimeOfLaunch;
+	
+	private System.Nullable<int> _LengthOfEvent;
+	
+	private System.Nullable<int> _EventsAdded;
+	
+	public CompetitionEvents_ViewResult()
+	{
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompetitionDescription", DbType="VarChar(50)")]
+	public string CompetitionDescription
+	{
+		get
+		{
+			return this._CompetitionDescription;
+		}
+		set
+		{
+			if ((this._CompetitionDescription != value))
+			{
+				this._CompetitionDescription = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ScaleDescription", DbType="VarChar(50)")]
+	public string ScaleDescription
+	{
+		get
+		{
+			return this._ScaleDescription;
+		}
+		set
+		{
+			if ((this._ScaleDescription != value))
+			{
+				this._ScaleDescription = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EventLocationDescription", DbType="VarChar(50)")]
+	public string EventLocationDescription
+	{
+		get
+		{
+			return this._EventLocationDescription;
+		}
+		set
+		{
+			if ((this._EventLocationDescription != value))
+			{
+				this._EventLocationDescription = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NofEvents", DbType="Int")]
+	public System.Nullable<int> NofEvents
+	{
+		get
+		{
+			return this._NofEvents;
+		}
+		set
+		{
+			if ((this._NofEvents != value))
+			{
+				this._NofEvents = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateOfEvent", DbType="Date")]
+	public System.Nullable<System.DateTime> DateOfEvent
+	{
+		get
+		{
+			return this._DateOfEvent;
+		}
+		set
+		{
+			if ((this._DateOfEvent != value))
+			{
+				this._DateOfEvent = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompetitionEventID", DbType="Int NOT NULL")]
+	public int CompetitionEventID
+	{
+		get
+		{
+			return this._CompetitionEventID;
+		}
+		set
+		{
+			if ((this._CompetitionEventID != value))
+			{
+				this._CompetitionEventID = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TimeOfLaunch", DbType="Time")]
+	public System.Nullable<System.TimeSpan> TimeOfLaunch
+	{
+		get
+		{
+			return this._TimeOfLaunch;
+		}
+		set
+		{
+			if ((this._TimeOfLaunch != value))
+			{
+				this._TimeOfLaunch = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LengthOfEvent", DbType="Int")]
+	public System.Nullable<int> LengthOfEvent
+	{
+		get
+		{
+			return this._LengthOfEvent;
+		}
+		set
+		{
+			if ((this._LengthOfEvent != value))
+			{
+				this._LengthOfEvent = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EventsAdded", DbType="Int")]
+	public System.Nullable<int> EventsAdded
+	{
+		get
+		{
+			return this._EventsAdded;
+		}
+		set
+		{
+			if ((this._EventsAdded != value))
+			{
+				this._EventsAdded = value;
+			}
+		}
+	}
+}
+
+public partial class CompetitionEventWorkouts_ViewPerCompetitionResult
+{
+	
+	private int _CompetitionID;
+	
+	private System.Nullable<int> _EventNumberID;
+	
+	private System.Nullable<int> _ExerciseID;
+	
+	private System.Nullable<int> _Reps;
+	
+	private System.Nullable<int> _DistanceInMeters;
+	
+	private System.Nullable<int> _TimeInSeconds;
+	
+	private string _WorkoutDescription;
+	
+	private int _EventWorkoutID;
+	
+	private string _SpecialRequirements;
+	
+	private string _Exercise;
+	
+	private string _EventNumberDescription;
+	
+	public CompetitionEventWorkouts_ViewPerCompetitionResult()
+	{
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompetitionID", DbType="Int NOT NULL")]
+	public int CompetitionID
+	{
+		get
+		{
+			return this._CompetitionID;
+		}
+		set
+		{
+			if ((this._CompetitionID != value))
+			{
+				this._CompetitionID = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EventNumberID", DbType="Int")]
+	public System.Nullable<int> EventNumberID
+	{
+		get
+		{
+			return this._EventNumberID;
+		}
+		set
+		{
+			if ((this._EventNumberID != value))
+			{
+				this._EventNumberID = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExerciseID", DbType="Int")]
+	public System.Nullable<int> ExerciseID
+	{
+		get
+		{
+			return this._ExerciseID;
+		}
+		set
+		{
+			if ((this._ExerciseID != value))
+			{
+				this._ExerciseID = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Reps", DbType="Int")]
+	public System.Nullable<int> Reps
+	{
+		get
+		{
+			return this._Reps;
+		}
+		set
+		{
+			if ((this._Reps != value))
+			{
+				this._Reps = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DistanceInMeters", DbType="Int")]
+	public System.Nullable<int> DistanceInMeters
+	{
+		get
+		{
+			return this._DistanceInMeters;
+		}
+		set
+		{
+			if ((this._DistanceInMeters != value))
+			{
+				this._DistanceInMeters = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TimeInSeconds", DbType="Int")]
+	public System.Nullable<int> TimeInSeconds
+	{
+		get
+		{
+			return this._TimeInSeconds;
+		}
+		set
+		{
+			if ((this._TimeInSeconds != value))
+			{
+				this._TimeInSeconds = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WorkoutDescription", DbType="VarChar(250)")]
+	public string WorkoutDescription
+	{
+		get
+		{
+			return this._WorkoutDescription;
+		}
+		set
+		{
+			if ((this._WorkoutDescription != value))
+			{
+				this._WorkoutDescription = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EventWorkoutID", DbType="Int NOT NULL")]
+	public int EventWorkoutID
+	{
+		get
+		{
+			return this._EventWorkoutID;
+		}
+		set
+		{
+			if ((this._EventWorkoutID != value))
+			{
+				this._EventWorkoutID = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SpecialRequirements", DbType="VarChar(250)")]
+	public string SpecialRequirements
+	{
+		get
+		{
+			return this._SpecialRequirements;
+		}
+		set
+		{
+			if ((this._SpecialRequirements != value))
+			{
+				this._SpecialRequirements = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Exercise", DbType="VarChar(50)")]
+	public string Exercise
+	{
+		get
+		{
+			return this._Exercise;
+		}
+		set
+		{
+			if ((this._Exercise != value))
+			{
+				this._Exercise = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EventNumberDescription", DbType="VarChar(10)")]
+	public string EventNumberDescription
+	{
+		get
+		{
+			return this._EventNumberDescription;
+		}
+		set
+		{
+			if ((this._EventNumberDescription != value))
+			{
+				this._EventNumberDescription = value;
 			}
 		}
 	}

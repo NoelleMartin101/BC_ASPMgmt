@@ -53,12 +53,11 @@ public partial class ExerciseAreas_List : System.Web.UI.Page
         try
         {
             GridEditableItem editedItem = e.Item as GridEditableItem;
-            int ExerciseAreaID = (int)editedItem.GetDataKeyValue("ExerciseBodyAreaID");
 
             var ExerciseAreaDes = editedItem.FindControl("txtExerciseAreaDescription") as TextBox;
             string ExerciseAreaDescription = ExerciseAreaDes.Text;
 
-            db.ExerciseAreas_Update(ExerciseAreaID, ExerciseAreaDescription);
+            db.ExerciseAreas_Insert(ExerciseAreaDescription);
             grid_ExerciseAreas.Rebind();
         }
         catch
