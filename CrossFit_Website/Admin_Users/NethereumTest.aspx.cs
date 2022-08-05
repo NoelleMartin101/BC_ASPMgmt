@@ -13,17 +13,16 @@ public partial class NethereumTest : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!Page.IsPostBack)
-        {
-            btn_Back.PostBackUrl = String.IsNullOrEmpty(Request.QueryString["returnurl"]) ? "~/Default.aspx" : HttpUtility.UrlDecode(Request.Url.Query.Substring(Request.Url.Query.IndexOf("returnurl") + 10));
-            GetAccountBalance().Wait();
+        {            
+           // GetAccountBalance().Wait();
 
         }
     }
-    static async Task GetAccountBalance()
-    {
-        var web3 = new web3("");// End point
-        var balance = await web3.Eth.GetBalance.SendRequestAsync(""); // Wallet Address
-        var etherAmount = web3.Convert.FromWei(balance.Value);
-    }
+    //static async Task GetAccountBalance()
+    //{
+    //    var web3 = new web3("");// End point
+    //    var balance = await web3.Eth.GetBalance.SendRequestAsync(""); // Wallet Address
+    //    var etherAmount = web3.Convert.FromWei(balance.Value);
+    //}
 }
 
