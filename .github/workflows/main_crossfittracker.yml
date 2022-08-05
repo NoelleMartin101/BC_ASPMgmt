@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'CrossfitTracker'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5F027555D9D64911B690248E91A96A49 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FA12BCD0F6E7490AB013D51D70E48ABA }}
           package: .
