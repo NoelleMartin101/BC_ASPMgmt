@@ -109,7 +109,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </td>
             <%-- Next Comp - RAG Status --%>
@@ -141,116 +140,31 @@
                 </div>
             </td>
             <%-- Buttons --%>
-            <%--<tr>--%>
-            <td style="width: 25%; vertical-align: top; padding-left: 25px">
-                <div class="row">
-                    <%--Status--%>
-                    <div class="mypanel panel-ATR" style="width: 90%; padding-bottom: 5px;">
-                        <div style="text-align: left; font-size: 16px; height: 40px; display: flex; align-items: center; background-color: steelblue; color: white">
-                            &nbsp;&nbsp;<i class="ion-android-clipboard"></i> &nbsp;&nbsp;
-                            Open Details
+            <td style="width: 25%; vertical-align: middle; padding-left: 25px" align="center" rowspan="2">
+                <div style="padding: 0px 11px 8px 6px; height: 350px">
+                     <asp:LinkButton runat="server" ID="LinkButton2" CssClass="nftBtn" PostBackUrl="~/Admin_Users/NethereumTest.aspx">
+                        <div class="btnContent" style="font-size:34px;">
+                            Mint Open NFT
                         </div>
-                        <div style="padding: 0px 11px 8px 6px;">
-                            <div class="mypanel totalEventsPanel row" runat="server" visible="true">
-                                <table>
-                                    <tr>
-                                        <td style="width: 330px; padding: 0 7px;">
-                                            <a style="text-decoration: none;">
-                                                <span class="grayTitle eventsTitle">Registered</span>
-                                            </a>
-                                        </td>
-                                        <td style="width: 120px; padding: 0 7px; text-align: right;">
-                                            <a style="text-decoration: none;">
-                                                <asp:Label class="grayTitle eventsTitle" ID="lblRegistered" runat="server" Text="0" />
-                                            </a>
-                                        </td>
-                                        <td style="width: 80px; padding: 0 7px; text-align: right;">
-                                            <asp:Button runat="server" ID="btnRegistered" CssClass="weeklylabel greenLabel1 btn" Text="View" Enabled="false" />
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="mypanel totalEventsPanel row">
-                                <table>
-                                    <tr>
-                                        <td style="width: 330px; padding: 0 7px;">
-                                            <a style="text-decoration: none;">
-                                                <span class="grayTitle eventsTitle">Submitted 22.1 Score</span>
-                                            </a>
-                                        </td>
-                                        <td style="width: 120px; padding: 0 7px; text-align: right;">
-                                            <a style="text-decoration: none;">
-                                                <asp:Label class="grayTitle eventsTitle" ID="lblSubmittedScore1" runat="server" Text="0" />
-                                            </a>
-                                        </td>
-                                        <td style="width: 80px; padding: 0 7px; text-align: right;">
-                                            <asp:Button runat="server" ID="btnSubmittedScore" CssClass="weeklylabel greenLabel1 btn" Text="View" Enabled="false" />
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="mypanel totalEventsPanel row">
-                                <table>
-                                    <tr>
-                                        <td style="width: 330px; padding: 0 7px;">
-                                            <a style="text-decoration: none;">
-                                                <span class="grayTitle eventsTitle">Submitted 22.2 Score</span>
-                                            </a>
-                                        </td>
-                                        <td style="width: 120px; padding: 0 7px; text-align: right;">
-                                            <a style="text-decoration: none;">
-                                                <asp:Label class="grayTitle eventsTitle" ID="lblSubmittedScore2" runat="server" Text="0" />
-                                            </a>
-                                        </td>
-                                        <td style="width: 80px; padding: 0 7px; text-align: right;">
-                                            <asp:Button runat="server" ID="btnSubmittedScore2" CssClass="weeklylabel greenLabel1 btn" Text="View" Enabled="false" />
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="mypanel totalEventsPanel row">
-                                <table>
-                                    <tr>
-                                        <td style="width: 330px; padding: 0 7px;">
-                                            <a style="text-decoration: none;">
-                                                <span class="grayTitle eventsTitle">Submitted 22.3 Score</span>
-                                            </a>
-                                        </td>
-                                        <td style="width: 120px; padding: 0 7px; text-align: right;">
-                                            <a style="text-decoration: none;">
-                                                <asp:Label class="grayTitle eventsTitle" ID="lblSubmittedScore3" runat="server" Text="0" />
-                                            </a>
-                                        </td>
-                                        <td style="width: 80px; padding: 0 7px; text-align: right;">
-                                            <asp:Button runat="server" ID="btnSubmittedScore3" CssClass="weeklylabel greenLabel1 btn" Text="View" Enabled="false" />
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="mypanel totalEventsPanel row">
-                                <table>
-                                    <tr>
-                                        <td style="width: 330px; padding: 0 7px;">
-                                            <a style="text-decoration: none;">
-                                                <span class="grayTitle eventsTitle">Open Leaderboard</span>
-                                            </a>
-                                        </td>
-                                        <td style="width: 120px; padding: 0 7px; text-align: right;">
-                                            <a style="text-decoration: none;">
-                                                <asp:Label class="grayTitle eventsTitle" ID="lblLeaderBoard" runat="server" Text="0" />
-                                            </a>
-                                        </td>
-                                        <td style="width: 80px; padding: 0 7px; text-align: right;">
-                                            <asp:Button runat="server" ID="btnLeaderBoard" CssClass="weeklylabel greenLabel1 btn" Text="View" Enabled="false" />
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-
+                    </asp:LinkButton>
+                    <asp:LinkButton runat="server" ID="btnQFNft" CssClass="nftBtn">
+                        <div class="btnContent" style="font-size:34px;">
+                            Mint QF NFT
                         </div>
-                    </div>
+                    </asp:LinkButton>
+                    <asp:LinkButton runat="server" ID="btnSFNft" CssClass="nftBtn">
+                        <div class="btnContent" style="font-size:34px;">
+                            Mint SF NFT
+                        </div>
+                    </asp:LinkButton>
+                    <asp:LinkButton runat="server" ID="btnGamesNft" CssClass="nftBtn">
+                        <div class="btnContent" style="font-size:34px;">
+                            Mint Games NFT
+                        </div>
+                    </asp:LinkButton>
                 </div>
             </td>
+          
             <%-- Open Links --%>
         </tr>
         <tr>
@@ -287,7 +201,7 @@
                         <div style=" height: 350px">
                             <asp:Chart ID="Chart2" runat="server" DataSourceID="SQLDs_EventAverageScores" Height="342px" Width="349px">
                                 <Series>
-                                    <asp:Series Name="Series1" XValueMember="DivisionGroup" YValueMembers="AverageScore"></asp:Series>
+                                    <asp:Series Name="Series1" XValueMember="DivisionGroup" YValueMembers="AverageScore" ChartType="Bar"></asp:Series>
                                 </Series>
                                 <ChartAreas>
                                     <asp:ChartArea Name="ChartArea1"></asp:ChartArea>
@@ -318,27 +232,6 @@
                             </asp:Chart>
                         </div>
                     </div>
-                </div>
-            </td>
-            <td style="width: 25%; vertical-align: middle; padding-left: 25px" align="center" >
-                <div style="padding: 0px 11px 8px 6px; height: 350px">
-                    <asp:LinkButton runat="server" ID="btnQFNft" CssClass="nftBtn" OnClick="btnQFNft_Click">
-                        <div class="btnContent" style="font-size:34px;">
-                            Mint QF NFT
-                        </div>
-                    </asp:LinkButton>
-                    <asp:LinkButton runat="server" ID="btnSFNft" CssClass="nftBtn">
-                        <div class="btnContent" style="font-size:34px;">
-                            Mint SF NFT
-                        </div>
-                    </asp:LinkButton>
-                    <asp:LinkButton runat="server" ID="btnGamesNft" CssClass="nftBtn">
-                        <div class="btnContent" style="font-size:34px;">
-                            Mint Games NFT
-                        </div>
-                    </asp:LinkButton>
-
-
                 </div>
             </td>
         </tr>

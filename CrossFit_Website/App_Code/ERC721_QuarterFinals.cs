@@ -1,17 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Threading.Tasks;
-using Nethereum.Web3;
-using Nethereum.ABI.FunctionEncoding.Attributes;
-using Nethereum.Contracts.CQS;
-using Nethereum.Util;
-using Nethereum.Web3.Accounts;
-using Nethereum.Hex.HexConvertors.Extensions;
-using Nethereum.Contracts;
-using Nethereum.Contracts.Extensions;
+using System.Diagnostics;
+using System.IO;
 using System.Numerics;
+using System.Reflection;
+using System.Threading;
+using Nethereum.Web3;
+using Nethereum.Web3.Accounts;
+using Nethereum.Web3.Accounts.Managed;
 
 /// <summary>
 /// Summary description for ERC721_QuarterFinals

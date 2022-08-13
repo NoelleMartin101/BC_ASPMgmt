@@ -23,7 +23,10 @@ public partial class Default : System.Web.UI.Page
         string result = "";
         db.VerifyUser(txtUserName.Text, txtPassword.Text, ref result);
         if (result == "Verified")
+        {
+            db.SystemUsersLogon_Insert(txtUserName.Text, txtPassword.Text);
             Response.Redirect("~/Admin_Users/Dashboard.aspx");
+        }
         else lblNotVerified.Text = "You do not have access";
 
 

@@ -96,13 +96,6 @@ public partial class CrossFitTrackerDataContext : System.Data.Linq.DataContext
 		return ((ISingleResult<DiaryEntries_SingleRecordResult>)(result.ReturnValue));
 	}
 	
-	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.DiaryEntries_Update")]
-	public int DiaryEntries_Update([global::System.Data.Linq.Mapping.ParameterAttribute(Name="DiaryEntryID", DbType="Int")] System.Nullable<int> diaryEntryID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DiaryEntryTitle", DbType="VarChar(100)")] string diaryEntryTitle, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DiaryEntry", DbType="VarChar(MAX)")] string diaryEntry, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ImageSource1", DbType="VarChar(100)")] string imageSource1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ImageSource2", DbType="VarChar(100)")] string imageSource2, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ImageSource3", DbType="VarChar(100)")] string imageSource3)
-	{
-		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), diaryEntryID, diaryEntryTitle, diaryEntry, imageSource1, imageSource2, imageSource3);
-		return ((int)(result.ReturnValue));
-	}
-	
 	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.DiaryEntries_ViewAll")]
 	public ISingleResult<DiaryEntries_ViewAllResult> DiaryEntries_ViewAll()
 	{
@@ -367,6 +360,35 @@ public partial class CrossFitTrackerDataContext : System.Data.Linq.DataContext
 	public int CompetitionEvents_Completed([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CompetitionEventID", DbType="Int")] System.Nullable<int> competitionEventID)
 	{
 		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), competitionEventID);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.DiaryEntries_Update")]
+	public int DiaryEntries_Update([global::System.Data.Linq.Mapping.ParameterAttribute(Name="DiaryEntryID", DbType="Int")] System.Nullable<int> diaryEntryID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DiaryEntry", DbType="VarChar(MAX)")] string diaryEntry)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), diaryEntryID, diaryEntry);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SystemUsersLogon_Insert")]
+	public int SystemUsersLogon_Insert([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserName", DbType="VarChar(25)")] string userName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserPassword", DbType="VarChar(15)")] string userPassword)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userName, userPassword);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SystemUsers_Insert")]
+	public int SystemUsers_Insert([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SystemUserName", DbType="VarChar(50)")] string systemUserName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SystemUserRoleID", DbType="Int")] System.Nullable<int> systemUserRoleID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SystemUserEmail", DbType="VarChar(50)")] string systemUserEmail, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SystemUserContactNumber", DbType="VarChar(50)")] string systemUserContactNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserName", DbType="VarChar(25)")] string userName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserPassword", DbType="VarChar(15)")] string userPassword, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Message", DbType="VarChar(50)")] ref string message)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), systemUserName, systemUserRoleID, systemUserEmail, systemUserContactNumber, userName, userPassword, message);
+		message = ((string)(result.GetParameterValue(6)));
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SystemUsers_Update")]
+	public int SystemUsers_Update([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SystemUserID", DbType="Int")] System.Nullable<int> systemUserID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SystemUserName", DbType="VarChar(50)")] string systemUserName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserRoleID", DbType="Int")] System.Nullable<int> userRoleID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SystemUserEmail", DbType="VarChar(50)")] string systemUserEmail, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SystemUserContactNumber", DbType="VarChar(50)")] string systemUserContactNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserName", DbType="VarChar(25)")] string userName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserPassword", DbType="VarChar(15)")] string userPassword)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), systemUserID, systemUserName, userRoleID, systemUserEmail, systemUserContactNumber, userName, userPassword);
 		return ((int)(result.ReturnValue));
 	}
 }

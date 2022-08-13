@@ -9,14 +9,12 @@
     <link rel="shortcut icon" href="App_Themes/DefaultTheme/images/D.png" type="image/x-icon" />
     <link rel="icon" href="App_Themes/DefaultTheme/images/D.png" type="image/x-icon" />
 </head>
-<body style="background-image: url('images/Login_bg.png'); background-repeat: repeat; background-color:#BDA0CB; margin: 0 auto;">
+<body style="background-image: url('images/Login_bg.png'); background-repeat: repeat; background-color:#fff; margin: 0 auto;">
     <form id="form1" runat="server">
         <div align="center" style="margin: 0 auto; padding-top: 60px;">
             <div style="width: 500px; height: 130px;">
-                <span style="color: #068481; font-size: 70px; font-weight: bold; font-family: Arial;">CCAT</span>
-                <br />
-                <br />
-                <span style="color: #068481; font-size: 20px; font-weight: bold; font-family: Calibri;">CrossFit Competition & Appplication Tracker</span><br />
+               
+                <span style="color: #000; font-size: 40px; font-weight: bold; font-family: Calibri;">CrossFit Competition & Athlete Tracker</span><br />
                 <br />
             </div>
             <div>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CrossfitTracker" Class="CrossFitTrackerDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-0AH4JG6\SQLSERVER2019;Initial Catalog=CrossfitTracker;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="CrossfitTrackerConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-0AH4JG6\SQLSERVER2019;Initial Catalog=CrossfitTracker;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="CrossfitTrackerConnectionString1" Provider="System.Data.SqlClient" />
   <Function Name="dbo.Countries_Insert" Method="Countries_Insert">
     <Parameter Name="CountryCode" Parameter="countryCode" Type="System.String" DbType="VarChar(5)" />
     <Parameter Name="CountryDescription" Parameter="countryDescription" Type="System.String" DbType="VarChar(100)" />
@@ -34,15 +34,6 @@
       <Column Name="ImageSource3" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="DiaryEntryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </ElementType>
-  </Function>
-  <Function Name="dbo.DiaryEntries_Update" Method="DiaryEntries_Update">
-    <Parameter Name="DiaryEntryID" Parameter="diaryEntryID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="DiaryEntryTitle" Parameter="diaryEntryTitle" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="DiaryEntry" Parameter="diaryEntry" Type="System.String" DbType="VarChar(MAX)" />
-    <Parameter Name="ImageSource1" Parameter="imageSource1" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="ImageSource2" Parameter="imageSource2" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="ImageSource3" Parameter="imageSource3" Type="System.String" DbType="VarChar(100)" />
-    <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.DiaryEntries_ViewAll" Method="DiaryEntries_ViewAll">
     <ElementType Name="DiaryEntries_ViewAllResult">
@@ -325,6 +316,36 @@
   </Function>
   <Function Name="dbo.CompetitionEvents_Completed" Method="CompetitionEvents_Completed">
     <Parameter Name="CompetitionEventID" Parameter="competitionEventID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DiaryEntries_Update" Method="DiaryEntries_Update">
+    <Parameter Name="DiaryEntryID" Parameter="diaryEntryID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DiaryEntry" Parameter="diaryEntry" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SystemUsersLogon_Insert" Method="SystemUsersLogon_Insert">
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="UserPassword" Parameter="userPassword" Type="System.String" DbType="VarChar(15)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SystemUsers_Insert" Method="SystemUsers_Insert">
+    <Parameter Name="SystemUserName" Parameter="systemUserName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="SystemUserRoleID" Parameter="systemUserRoleID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SystemUserEmail" Parameter="systemUserEmail" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="SystemUserContactNumber" Parameter="systemUserContactNumber" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="UserPassword" Parameter="userPassword" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="Message" Parameter="message" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SystemUsers_Update" Method="SystemUsers_Update">
+    <Parameter Name="SystemUserID" Parameter="systemUserID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SystemUserName" Parameter="systemUserName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="UserRoleID" Parameter="userRoleID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SystemUserEmail" Parameter="systemUserEmail" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="SystemUserContactNumber" Parameter="systemUserContactNumber" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="UserPassword" Parameter="userPassword" Type="System.String" DbType="VarChar(15)" />
     <Return Type="System.Int32" />
   </Function>
 </Database>
