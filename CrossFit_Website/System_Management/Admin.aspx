@@ -48,6 +48,7 @@
             </tr>
         </table>   
     <div>
+        <a class="list-group-item list-group-item-action" href="ContractAddresses_List.aspx?returnurl=Admin.aspx">Contract Data</a>
         <a class="list-group-item list-group-item-action" href="SystemUsers_List.aspx?returnurl=Admin.aspx">All Users</a>
     </div>
 </asp:Content>

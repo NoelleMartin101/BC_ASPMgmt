@@ -72,8 +72,8 @@
             </tr>
             <tr>
                 <td colspan="4">
-                    <asp:LinkButton ID="btnSave" runat="server" CssClass="btn btn-primary" OnClick="btnSave_Click" Visible="true"><span class="glyphicon glyphicon-save"></span>&nbsp;&nbsp;&nbsp; Save&nbsp;&nbsp;&nbsp;</asp:LinkButton>
-                    <asp:LinkButton ID="btnSaveAndComplete" runat="server" CssClass="btn btn-success" OnClick="btnSaveAndComplete_Click" Visible="true"><span class="glyphicon glyphicon-save"></span>&nbsp;&nbsp;&nbsp; Save & Complete&nbsp;&nbsp;&nbsp;</asp:LinkButton>
+                    <asp:LinkButton ID="btnSave" runat="server" CssClass="btn btn-primary" OnClick="btnSave_Click" Visible="true"><span class="fa fa-save"></span>&nbsp;&nbsp;&nbsp; Save&nbsp;&nbsp;&nbsp;</asp:LinkButton>
+                    <asp:LinkButton ID="btnSaveAndComplete" runat="server" CssClass="btn btn-success" OnClick="btnSaveAndComplete_Click" Visible="true"><span class="fa fa-save"></span>&nbsp;&nbsp;&nbsp; Save & Complete&nbsp;&nbsp;&nbsp;</asp:LinkButton>
                 </td>
             </tr>
         </table>

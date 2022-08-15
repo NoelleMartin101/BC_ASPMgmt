@@ -31,14 +31,14 @@
                         <asp:LinkButton ID="btnEdit" runat="server" CssClass="btn btn-success" ToolTip="Edit diary entry" CausesValidation="false" OnClick="btn_Edit_Click" Visible="true">
                             <span  class="glyphicon glyphicon-edit" style="color: white;"></span>
                         </asp:LinkButton>
-                        <asp:LinkButton ID="btnSave" runat="server" CssClass="btn btn-primary" ToolTip="Save Updates" CommandArgument='<%# Eval("DiaryEntryID") %>' OnCommand="btnSave_Command" Visible="false"><span class="glyphicon glyphicon-save"></span></asp:LinkButton>
+                        <asp:LinkButton ID="btnSave" runat="server" CssClass="btn btn-primary" ToolTip="Save Updates" CommandArgument='<%# Eval("DiaryEntryID") %>' OnCommand="btnSave_Command" Visible="false"><span class="fa fa-save"></span></asp:LinkButton>
                         <asp:LinkButton ID="btnCancel" runat="server" CssClass="btn btn-default" ToolTip="Cancel Updates" CausesValidation="false" OnClick="btnCancel_Click" Visible="false">
                             <span  class="fas fa-times-circle" style="color: black;"></span>
                         </asp:LinkButton>
                     </td>
                     <td style="vertical-align: top;">
                         <asp:Label runat="server" Visible="true" ID="lblEntry" Text='<%# Eval("DiaryEntry") %>' Font-Size="10pt" ForeColor="Black" />
-                        <telerik:RadEditor ID="txtDiaryEntry" Visible="false" runat="server" RenderMode="Lightweight" Height="250px" TabIndex="1" Style="padding: 0" Width="100%" EditModes="Design" BackColor="White" Content='<%# Eval("DiaryEntry") %>'>
+                        <telerik:RadEditor ID="txtDiaryEntry" Font-Size="14px" Visible="false" runat="server" RenderMode="Lightweight" Height="250px" TabIndex="1" Style="padding: 0" Width="100%" EditModes="Design" BackColor="White" Content='<%# Eval("DiaryEntry") %>'>
                             <Tools>
                                 <telerik:EditorToolGroup>
                                     <telerik:EditorTool Name="Cut" />

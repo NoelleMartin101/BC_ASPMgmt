@@ -28,7 +28,7 @@
                     <tr>
                         <td>Password:</td>
                         <td>
-                            <asp:TextBox ID="txtPassword" runat="server" Width="400px" MaxLength="15" />                            
+                            <asp:TextBox ID="txtPassword" TextMode="Password" runat="server" Width="400px" MaxLength="15" />                            
                         </td>
                     </tr>
                 </table>
